@@ -1,6 +1,6 @@
 {
   "id": "chujethro/rsna-knee",
-  "title": "RSNA Knee",
+  "title": "RSNA_knee",
   "code_file": "rsna-knee.ipynb",
   "language": "python",
   "kernel_type": "notebook",
@@ -8,6 +8,7 @@
   "enable_gpu": true,
   "enable_tpu": false,
   "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
   "keywords": [],
   "dataset_sources": [
     "chujethro/rsna-knee-checkpoints"
