@@ -1,6 +1,7 @@
 """
 Asymmetric Loss (ASL) for multi-label medical imaging with extreme class imbalance.
 Dynamically down-weights easy negatives to focus gradients on hard positive and negative clinical abnormalities.
+Numerically stabilized against fractional power NaN errors.
 """
 
 import torch
@@ -21,7 +22,7 @@ class AsymmetricLoss(nn.Module):
         gamma_neg: float = 4.0,
         gamma_pos: float = 0.5,
         clip: float = 0.05,
-        eps: float = 1e-8,
+        eps: float = 1e-7,
         disable_torch_grad_focal_loss: bool = True,
     ):
         super().__init__()
@@ -54,9 +55,9 @@ class AsymmetricLoss(nn.Module):
         if self.clip is not None and self.clip > 0:
             xs_neg = (xs_neg + self.clip).clamp(max=1.0)
 
-        # Basic CE calculation
-        los_pos = targets * torch.log(xs_pos.clamp(min=self.eps))
-        los_neg = (1.0 - targets) * torch.log(xs_neg.clamp(min=self.eps))
+        # Basic CE calculation with clamp
+        los_pos = targets * torch.log(xs_pos.clamp(min=self.eps, max=1.0))
+        los_neg = (1.0 - targets) * torch.log(xs_neg.clamp(min=self.eps, max=1.0))
         loss = los_pos + los_neg
 
         # Asymmetric Focusing
@@ -64,13 +65,13 @@ class AsymmetricLoss(nn.Module):
             if self.disable_torch_grad_focal_loss:
                 torch.set_grad_enabled(False)
             pt0 = xs_pos * targets
-            pt1 = xs_neg * (1.0 - targets)  # pt = p if t > 0 else 1-p
-            pt = pt0 + pt1
+            pt1 = xs_neg * (1.0 - targets)
+            pt = (pt0 + pt1).clamp(min=0.0, max=1.0)
             one_sided_gamma = self.gamma_pos * targets + self.gamma_neg * (1.0 - targets)
-            one_sided_w = torch.pow(1.0 - pt, one_sided_gamma)
+            one_sided_w = torch.pow(torch.clamp(1.0 - pt, min=0.0, max=1.0), one_sided_gamma)
             if self.disable_torch_grad_focal_loss:
                 torch.set_grad_enabled(True)
-            loss *= one_sided_w
+            loss = loss * one_sided_w
 
         loss = -loss
 

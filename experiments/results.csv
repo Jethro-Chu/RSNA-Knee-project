@@ -1,0 +1,3 @@
+experiment_id,timestamp,architecture,backbone,image_size,slices_per_plane,loss,learning_rate,epochs,fold,macro_auc,ACL_auc,MCL_auc,Medial_Meniscus_auc,Lateral_Meniscus_auc,Medial_OA_auc,Lateral_OA_auc,PF_OA_auc,Effusion_auc,Synovitis_auc,Bakers_auc,Contusion_auc,Fracture_auc,runtime_sec,notes
+exp_20260814_085014_f0,2026-08-14T08:50:14.918930,Multimodal_TriPlane_HMIL,resnet18,224,12,AsymmetricLoss,0.0003,2,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,145.7,Checksum change: d3d85e06e6 -> e84d83213c
+exp_20260814_085216_f0,2026-08-14T08:52:16.572102,Multimodal_TriPlane_HMIL,resnet18,224,12,AsymmetricLoss,0.0003,2,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,109.9,Checksum change: 57e5654536 -> e84d83213c

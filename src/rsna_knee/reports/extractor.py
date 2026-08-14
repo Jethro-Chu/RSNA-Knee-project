@@ -1,10 +1,10 @@
 """
 Clinical report abnormality extractor for RSNA Knee MRI reports.
 Distinguishes 4 semantic states per abnormality:
-  - 'positive' (p ~ 0.95)
-  - 'negative' (p ~ 0.05)
-  - 'uncertain' (p ~ 0.50)
-  - 'not_mentioned' (p ~ 0.10 or masked out)
+  - 'positive' (p ~ 0.95, loss_mask=True, confidence=0.90)
+  - 'negative' (p ~ 0.05, loss_mask=True, confidence=0.90)
+  - 'uncertain' (p ~ 0.50, loss_mask=False)
+  - 'not_mentioned' (p ~ 0.10, loss_mask=False)
 """
 
 import re
@@ -18,7 +18,7 @@ from rsna_knee.reports.ontology import load_ontology
 class ReportAbnormalityExtractor:
     """
     Deterministic multilingual NLP extractor for the 12 knee abnormalities.
-    Handles section weighting, negation scoping, uncertainty qualifiers, and exclusion rules.
+    Handles section weighting, negation scoping, uncertainty qualifiers, proximity rules, and exclusions.
     """
 
     def __init__(self, ontology: Optional[Dict[str, Any]] = None):
@@ -26,7 +26,7 @@ class ReportAbnormalityExtractor:
             ontology = load_ontology()
         self.ontology = ontology
 
-        # Compile common negation prefixes across languages (en, es, fr, de)
+        # Common negation patterns across languages (en, es, fr, de, hr, tr, el, bg)
         self.negation_patterns = [
             r"\bno\b",
             r"\bwithout\b",
@@ -48,6 +48,14 @@ class ReportAbnormalityExtractor:
             r"\bkeinerlei\b",
             r"\bohne\b",
             r"\bausschluss\b",
+            r"\bbez\b",
+            r"\bnema\b",
+            r"\byok\b",
+            r"\bsaptanmadı\b",
+            r"\bχωρίς\b",
+            r"\bδεν\b",
+            r"\bбез\b",
+            r"\bняма\b",
         ]
         self.neg_regex = re.compile("|".join(self.negation_patterns), re.IGNORECASE)
 
@@ -64,8 +72,27 @@ class ReportAbnormalityExtractor:
             r"\bsuspecté\b",
             r"\bmöglich\b",
             r"\bverdacht auf\b",
+            r"\bvjerojatno\b",
+            r"\bolası\b",
+            r"\bπιθανόν\b",
         ]
         self.unc_regex = re.compile("|".join(self.uncertainty_patterns), re.IGNORECASE)
+
+        # Proximity patterns for complex multi-word clinical concepts (e.g. OA, Menisci, Ligaments)
+        self.proximity_rules = {
+            "Medial OA": [
+                re.compile(r"\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|gonartros\w*)\b.{1,40}\b(?:medial\w*|interno|medijaln\w*|femorotibial\s+medial)\b", re.IGNORECASE),
+                re.compile(r"\b(?:medial\w*|interno|medijaln\w*)\b.{1,40}\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|gonartros\w*)\b", re.IGNORECASE),
+            ],
+            "Lateral OA": [
+                re.compile(r"\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|gonartros\w*)\b.{1,40}\b(?:lateral\w*|externo|lateraln\w*|femorotibial\s+lateral)\b", re.IGNORECASE),
+                re.compile(r"\b(?:lateral\w*|externo|lateraln\w*)\b.{1,40}\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|gonartros\w*)\b", re.IGNORECASE),
+            ],
+            "PF OA": [
+                re.compile(r"\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|condropat\w*)\b.{1,40}\b(?:pf|patellofemoral\w*|patellar\w*|femoropatellar\w*|rotulian\w*|patele)\b", re.IGNORECASE),
+                re.compile(r"\b(?:pf|patellofemoral\w*|patellar\w*|femoropatellar\w*|rotulian\w*|patele)\b.{1,40}\b(?:oa|osteoarthrit\w*|arthros\w*|artros\w*|chondros\w*|hondromalac\w*|chondromalac\w*|condropat\w*)\b", re.IGNORECASE),
+            ],
+        }
 
     def extract_study_report(self, report_text: str) -> Dict[str, Dict[str, Any]]:
         """
@@ -94,9 +121,8 @@ class ReportAbnormalityExtractor:
                 loss_mask = True
             elif state == "uncertain":
                 prob = 0.50
-                loss_mask = False  # Zero or reduced loss weight for training
+                loss_mask = False  # Zero loss weight for training
             else:  # not_mentioned
-                # Conservative prior for unmentioned findings
                 prob = 0.10
                 loss_mask = False
 
@@ -136,12 +162,12 @@ class ReportAbnormalityExtractor:
         unc_terms = _flatten_terms(target_def.get("uncertain_terms", {}))
         exclusions = _flatten_terms(target_def.get("exclusions", {}))
 
-        # Check explicit negative statements first
+        # 1. Check explicit negative terms first
         for neg_term in neg_terms:
             if neg_term in diagnostic_text:
                 return "negative", 0.95, f"Explicit negative term: '{neg_term}'"
 
-        # Check positive terms
+        # 2. Check positive terms
         matched_positive = None
         for pos_term in pos_terms:
             if pos_term in diagnostic_text:
@@ -158,6 +184,20 @@ class ReportAbnormalityExtractor:
                 matched_positive = pos_term
                 break
 
+        # 3. Check proximity rules if no direct term match
+        if not matched_positive and target in self.proximity_rules:
+            for pattern in self.proximity_rules[target]:
+                m = pattern.search(diagnostic_text)
+                if m:
+                    span_start = m.start()
+                    context_window = diagnostic_text[max(0, span_start - 80):span_start]
+                    if self.neg_regex.search(context_window):
+                        return "negative", 0.90, f"Negated proximity match: '{m.group()}'"
+                    if self.unc_regex.search(context_window):
+                        return "uncertain", 0.60, f"Uncertain proximity match: '{m.group()}'"
+                    matched_positive = f"proximity: {m.group()}"
+                    break
+
         if matched_positive:
             # Check exclusions
             for exc in exclusions:
@@ -165,7 +205,7 @@ class ReportAbnormalityExtractor:
                     return "negative", 0.85, f"Exclusion matched: '{exc}'"
             return "positive", 0.95, f"Positive match: '{matched_positive}'"
 
-        # Check uncertain terms
+        # 4. Check uncertain terms
         for unc_term in unc_terms:
             if unc_term in diagnostic_text:
                 return "uncertain", 0.60, f"Uncertain match: '{unc_term}'"

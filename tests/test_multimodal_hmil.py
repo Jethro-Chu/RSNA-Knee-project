@@ -9,11 +9,10 @@ from rsna_knee.models.multimodal_hmil import MultimodalHMILModel
 
 def test_multimodal_hmil_forward():
     model = MultimodalHMILModel(
-        backbone_name="resnet34d",
-        pretrained=False,
         num_targets=12,
         in_channels=3,
         meta_dim=16,
+        feature_dim=128,
     )
     model.eval()
 
@@ -34,11 +33,10 @@ def test_multimodal_hmil_forward():
 
 def test_multimodal_hmil_missing_meta():
     model = MultimodalHMILModel(
-        backbone_name="resnet34d",
-        pretrained=False,
         num_targets=12,
         in_channels=3,
         meta_dim=16,
+        feature_dim=128,
     )
     model.eval()
 

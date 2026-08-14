@@ -1,19 +1,25 @@
-# Target Ontology and Clinical Knowledge Base for 12 Knee MRI Abnormalities
+# Target Ontology and Clinical Knowledge Base for 12 Knee MRI Abnormalities (Multilingual: EN, ES, FR, DE, HR/SR, TR, EL, BG)
 
 targets:
   ACL:
     official_name: "ACL"
     full_name: "Anterior Cruciate Ligament Injury"
     positive_terms:
-      en: ["acl tear", "acl rupture", "tear of the anterior cruciate ligament", "tear of the acl", "rupture of the anterior cruciate ligament", "anterior cruciate ligament tear", "anterior cruciate ligament rupture", "complete acl disruption", "full thickness acl tear", "partial acl tear", "torn acl", "high-grade acl tear", "sprain of the anterior cruciate ligament", "non-visualized acl", "discontinuous acl fibers"]
-      es: ["rotura del lca", "desgarro del lca", "rotura ligamento cruzado anterior", "lesión del lca", "ruptura del lca", "rotura del ligamento cruzado anterior"]
-      fr: ["rupture du lca", "déchirure du lca", "lésion du ligament croisé antérieur", "désinsertion du lca"]
-      de: ["vorderes kreuzbandruptur", "vkb ruptur", "vkb-ruptur", "vkb-läsion", "läsion des vorderen kreuzbandes", "vkb teilläsion"]
+      en: ["acl tear", "acl rupture", "tear of the anterior cruciate ligament", "tear of the acl", "rupture of the anterior cruciate ligament", "anterior cruciate ligament tear", "anterior cruciate ligament rupture", "complete acl disruption", "full thickness acl tear", "partial acl tear", "torn acl", "high-grade acl tear", "sprain of the anterior cruciate ligament", "non-visualized acl", "discontinuous acl fibers", "contour of acl is not in a straight line", "acl is torn", "rupture of the acl", "complete rupture of the acl"]
+      es: ["rotura del lca", "desgarro del lca", "rotura ligamento cruzado anterior", "lesión del lca", "ruptura del lca", "rotura del ligamento cruzado anterior", "desgarro lca"]
+      fr: ["rupture du lca", "déchirure du lca", "lésion du ligament croisé antérieur", "désinsertion du lca", "rupture lca"]
+      de: ["vorderes kreuzbandruptur", "vkb ruptur", "vkb-ruptur", "vkb-läsion", "läsion des vorderen kreuzbandes", "vkb teilläsion", "ruptur des vorderen kreuzbandes"]
+      hr: ["ruptura prednjeg križnog", "lezija acl", "pucanje acl", "ruptura prednje ukrstene"]
+      tr: ["ön çapraz bağ rüptürü", "açb rüptürü", "ön çapraz bağda yırtık", "on capraz bag yirtik"]
+      el: ["πρόσθιου χιαστού", "ρήξη πρόσθιου χιαστού", "προσθιου χιαστου"]
+      bg: ["руптура на предна кръстна връзка", "пкс руптура"]
     negative_terms:
-      en: ["acl is intact", "intact acl", "normal acl", "unremarkable acl", "no acl tear", "without acl disruption", "anterior cruciate ligament is intact", "no evidence of acl tear"]
-      es: ["lca intacto", "sin rotura del lca", "ligamento cruzado anterior conservado"]
-      fr: ["lca intact", "intégrité du lca", "pas de rupture du lca"]
-      de: ["intaktes vkb", "keine vkb ruptur", "regelrechtes vorderes kreuzband"]
+      en: ["acl is intact", "intact acl", "normal acl", "unremarkable acl", "no acl tear", "without acl disruption", "anterior cruciate ligament is intact", "no evidence of acl tear", "acl intact", "acl normal"]
+      es: ["lca intacto", "sin rotura del lca", "ligamento cruzado anterior conservado", "lca normal"]
+      fr: ["lca intact", "intégrité du lca", "pas de rupture du lca", "lca normal"]
+      de: ["intaktes vkb", "keine vkb ruptur", "regelrechtes vorderes kreuzband", "vkb intakt"]
+      hr: ["acl intaktan", "prednji krizni uredan"]
+      tr: ["ön çapraz bağ intakt", "ön çapraz bağ normal"]
     uncertain_terms:
       en: ["possible acl tear", "suspected acl tear", "cannot rule out acl tear", "indeterminate acl signal"]
     exclusions:
@@ -23,15 +29,21 @@ targets:
     official_name: "MCL"
     full_name: "Medial Collateral Ligament Injury"
     positive_terms:
-      en: ["mcl tear", "mcl sprain", "tear of the medial collateral ligament", "medial collateral ligament tear", "mcl rupture", "grade 1 mcl sprain", "grade 2 mcl sprain", "grade 3 mcl tear", "partial tear of mcl", "mcl edema with fiber disruption"]
-      es: ["rotura del lli", "lesión del ligamento colateral medial", "esguince del lli"]
-      fr: ["rupture du lli", "lésion du ligament collatéral médial", "entorse du lcm"]
+      en: ["mcl tear", "mcl sprain", "tear of the medial collateral ligament", "medial collateral ligament tear", "mcl rupture", "grade 1 mcl sprain", "grade 2 mcl sprain", "grade 3 mcl tear", "partial tear of mcl", "mcl edema with fiber disruption", "complete rupture of the mcl", "mcl is torn", "rupture of the mcl"]
+      es: ["rotura del lli", "lesión del ligamento colateral medial", "esguince del lli", "rotura ligamento lateral interno", "desgarro mcl"]
+      fr: ["rupture du lli", "lésion du ligament collatéral médial", "entorse du lcm", "rupture du lcm"]
       de: ["innenbandruptur", "innenbandläsion", "läsion des innenbandes", "innenbanddistorsion", "mediales kollateralband läsion"]
+      hr: ["ruptura mcl", "lezija medijalnog kolateralnog", "mcl lezija"]
+      tr: ["iç yan bağ rüptürü", "mcl rüptür", "medial kollateral ligaman yırtık"]
+      el: ["έσω πλαγίου συνδέσμου", "ρηξη εσω πλαγιου"]
+      bg: ["руптура на медиална колатерална връзка"]
     negative_terms:
-      en: ["mcl is intact", "intact mcl", "normal mcl", "no mcl tear", "medial collateral ligament is normal", "unremarkable medial collateral ligament"]
-      es: ["lli intacto", "sin lesión del ligamento colateral medial"]
-      fr: ["lli intact", "pas d'entorse du lli"]
+      en: ["mcl is intact", "intact mcl", "normal mcl", "no mcl tear", "medial collateral ligament is normal", "unremarkable medial collateral ligament", "mcl intact", "mcl normal"]
+      es: ["lli intacto", "sin lesión del ligamento colateral medial", "mcl intacto"]
+      fr: ["lli intact", "pas d'entorse du lli", "lcm intact"]
       de: ["intaktes innenband", "regelrechtes mediales kollateralband"]
+      hr: ["mcl intaktan", "medijalni kolateralni ligament uredan"]
+      tr: ["medial kollateral ligaman normaldir", "iç yan bağ sağlam"]
     uncertain_terms:
       en: ["possible mcl sprain", "questionable mcl injury", "indeterminate mcl edema"]
     exclusions:
@@ -41,15 +53,21 @@ targets:
     official_name: "Medial Meniscus"
     full_name: "Medial Meniscus Tear / Pathology"
     positive_terms:
-      en: ["medial meniscus tear", "medial meniscal tear", "tear of the medial meniscus", "posterior horn medial meniscus tear", "horizontal tear medial meniscus", "radial tear medial meniscus", "complex medial meniscal tear", "bucket handle tear of medial meniscus", "root tear of medial meniscus", "maceration of medial meniscus"]
-      es: ["rotura del menisco interno", "lesión meniscal medial", "desgarro del menisco interno"]
-      fr: ["fissure du ménisque médial", "lésion du ménisque interne", "rupture méniscale médiale"]
-      de: ["innenmeniskusruptur", "innenmeniskusläsion", "hinterhorn innenmeniskus läsion", "ruptur des medialen meniskus"]
+      en: ["medial meniscus tear", "medial meniscal tear", "tear of the medial meniscus", "posterior horn medial meniscus tear", "horizontal tear medial meniscus", "radial tear medial meniscus", "complex medial meniscal tear", "bucket handle tear of medial meniscus", "root tear of medial meniscus", "maceration of medial meniscus", "medial meniscus posterior horn tear", "medial meniscus body tear", "radial tear at the posterior root of the medial meniscus", "displaced meniscal fragment into the medial gutter", "medial meniscus: tear", "medial meniscus tear."]
+      es: ["rotura del menisco interno", "lesión meniscal medial", "desgarro del menisco interno", "rotura menisco interno", "rotura compleja cuerno posterior menisco medial", "rotura del cuerno posterior del menisco interno"]
+      fr: ["fissure du ménisque médial", "lésion du ménisque interne", "rupture méniscale médiale", "fissure méniscale interne", "lésion de la corne postérieure du ménisque médial"]
+      de: ["innenmeniskusruptur", "innenmeniskusläsion", "hinterhorn innenmeniskus läsion", "ruptur des medialen meniskus", "innenmeniskusriss", "horizontale innenmeniskusläsion", "radiale innenmeniskusläsion"]
+      hr: ["ruptura medijalnog meniska", "lezija straznjeg roga medijalnog meniska", "lezija medijalnog meniska"]
+      tr: ["medial menisküs posterior hornunda yırtık", "medial menisküs yırtık", "medial meniskus yirtik"]
+      el: ["ρήξη έσω μηνίσκου", "εκφύλιση έσω μηνίσκου", "ρηξη εσω μηνισκου"]
+      bg: ["руптура на медиален менискус", "лезия на медиален менискус"]
     negative_terms:
-      en: ["medial meniscus is intact", "normal medial meniscus", "no medial meniscus tear", "unremarkable medial meniscus", "menisci are intact"]
-      es: ["menisco interno intacto", "sin rotura del menisco medial"]
-      fr: ["ménisque médial intact", "intégrité méniscale"]
-      de: ["intakter innenmeniskus", "keine innenmeniskusläsion"]
+      en: ["medial meniscus is intact", "normal medial meniscus", "no medial meniscus tear", "unremarkable medial meniscus", "menisci are intact", "medial meniscus intact", "medial meniscus normal", "medial meniscus is normal"]
+      es: ["menisco interno intacto", "sin rotura del menisco medial", "menisco medial es de morfología y señal conservada", "menisco interno normal"]
+      fr: ["ménisque médial intact", "intégrité méniscale", "ménisque interne sans anomalie"]
+      de: ["intakter innenmeniskus", "keine innenmeniskusläsion", "innenmeniskus intakt"]
+      hr: ["medijalni menisk uredan", "medijalni menisk intaktan"]
+      tr: ["medial menisküs normal", "medial meniskus normaldir"]
     uncertain_terms:
       en: ["possible medial meniscus tear", "suspected medial meniscal tear", "grade 2 intrameniscal signal without surface extension"]
     exclusions:
@@ -59,15 +77,21 @@ targets:
     official_name: "Lateral Meniscus"
     full_name: "Lateral Meniscus Tear / Pathology"
     positive_terms:
-      en: ["lateral meniscus tear", "lateral meniscal tear", "tear of the lateral meniscus", "posterior horn lateral meniscus tear", "radial tear lateral meniscus", "horizontal tear lateral meniscus", "complex lateral meniscal tear", "bucket handle tear lateral meniscus", "root tear lateral meniscus", "lateral meniscal extrusion"]
-      es: ["rotura del menisco externo", "lesión meniscal lateral", "desgarro del menisco externo"]
-      fr: ["fissure du ménisque latéral", "lésion du ménisque externe", "rupture méniscale latérale"]
-      de: ["außenmeniskusruptur", "außenmeniskusläsion", "hinterhorn außenmeniskus läsion", "ruptur des lateralen meniskus"]
+      en: ["lateral meniscus tear", "lateral meniscal tear", "tear of the lateral meniscus", "posterior horn lateral meniscus tear", "radial tear lateral meniscus", "horizontal tear lateral meniscus", "complex lateral meniscal tear", "bucket handle tear lateral meniscus", "root tear lateral meniscus", "lateral meniscal extrusion", "lateral meniscus posterior horn tear", "lateral meniscus body tear", "lateral meniscus: tear", "lateral meniscus tear."]
+      es: ["rotura del menisco externo", "lesión meniscal lateral", "desgarro del menisco externo", "rotura menisco externo", "rotura cuerno anterior menisco lateral", "rotura compleja degenerativa cuerno anterior menisco"]
+      fr: ["fissure du ménisque latéral", "lésion du ménisque externe", "rupture méniscale latérale", "fissure méniscale externe"]
+      de: ["außenmeniskusruptur", "außenmeniskusläsion", "hinterhorn außenmeniskus läsion", "ruptur des lateralen meniskus", "außenmeniskusriss"]
+      hr: ["ruptura lateralnog meniska", "lezija lateralnog meniska"]
+      tr: ["lateral menisküs posterior hornunda yırtık", "lateral menisküs yırtık", "lateral meniskus yirtik"]
+      el: ["ρήξη έξω μηνίσκου", "εκφύλιση στον έξω μηνίσκο", "ρηξη εξω μηνισκου"]
+      bg: ["руптура на латерален менискус"]
     negative_terms:
-      en: ["lateral meniscus is intact", "normal lateral meniscus", "no lateral meniscus tear", "unremarkable lateral meniscus", "menisci are intact"]
-      es: ["menisco externo intacto", "sin rotura del menisco lateral"]
-      fr: ["ménisque latéral intact", "intégrité du ménisque latéral"]
-      de: ["intakter außenmeniskus", "keine außenmeniskusläsion"]
+      en: ["lateral meniscus is intact", "normal lateral meniscus", "no lateral meniscus tear", "unremarkable lateral meniscus", "menisci are intact", "lateral meniscus intact", "lateral meniscus normal", "lateral meniscus is normal"]
+      es: ["menisco externo intacto", "sin rotura del menisco lateral", "menisco lateral normal"]
+      fr: ["ménisque latéral intact", "intégrité du ménisque latéral", "ménisque externe normal"]
+      de: ["intakter außenmeniskus", "keine außenmeniskusläsion", "außenmeniskus intakt"]
+      hr: ["lateralni menisk uredan", "lateralni menisk intaktan"]
+      tr: ["lateral menisküs normal", "lateral meniskus normaldir"]
     uncertain_terms:
       en: ["possible lateral meniscus tear", "suspected lateral meniscal tear", "equivocal lateral meniscus signal"]
     exclusions:
@@ -77,83 +101,107 @@ targets:
     official_name: "Medial OA"
     full_name: "Medial Compartment Osteoarthritis"
     positive_terms:
-      en: ["medial compartment osteoarthritis", "medial oa", "medial joint space narrowing", "medial compartment cartilage loss", "medial chondromalacia grade 3", "medial chondromalacia grade 4", "medial compartment arthrosis", "medial compartment degenerative changes", "medial osteophyte formation"]
-      es: ["artrosis compartimento interno", "gonartrosis medial", "desgaste cartílago compartimento medial"]
-      fr: ["gonarthrose fémoro-tibiale médiale", "arthrose interne du genou", "pincement fémoro-tibial médial"]
-      de: ["mediale gonarthrose", "arthrose des medialen kompartiments", "medialer gelenkspaltverschmälerung"]
+      en: ["medial compartment osteoarthritis", "medial oa", "oa of medial compartment", "oa of medial", "oa medial", "medial compartment oa", "medial joint space narrowing", "medial compartment cartilage loss", "medial chondromalacia grade 3", "medial chondromalacia grade 4", "medial compartment arthrosis", "medial compartment degenerative changes", "medial osteophyte formation", "medial femoral condyle chondrosis", "medial compartment chondrosis", "oa femorotibial medial", "femorotibial medial oa", "medial knee osteoarthritis"]
+      es: ["artrosis compartimento interno", "gonartrosis medial", "desgaste cartílago compartimento medial", "artrosis medial", "oa femorotibial medial", "artrosis femorotibial interna", "condropatía medial grado 3", "condropatia medial"]
+      fr: ["gonarthrose fémoro-tibiale médiale", "arthrose interne du genou", "pincement fémoro-tibial médial", "gonarthrose médiale", "arthrose médiale"]
+      de: ["mediale gonarthrose", "arthrose des medialen kompartiments", "medialer gelenkspaltverschmälerung", "mediale arthrose", "medialer knorpelverlust"]
+      hr: ["oa medijalnog", "artroza medijalnog", "hondromalacija medijalnog", "denudacija hrskavice medijalnog", "gonartrotske promjene medijalnog", "erozivne promjene zglobne hrskavice medijalnog"]
+      tr: ["medial osteoartrit", "medial kompartmanda kıkırdak kaybı", "medial gonartroz"]
+      el: ["οστεοαρθρίτιδα έσω διαμερίσματος", "αλλοιώσεις έσω διαμερίσματος"]
+      bg: ["медиална гонартроза", "хрущялни лезии на медиален кондил"]
     negative_terms:
-      en: ["no medial compartment osteoarthritis", "medial cartilage preserved", "normal medial compartment", "preserved medial joint space"]
-      es: ["sin artrosis medial", "cartílago medial conservado"]
+      en: ["no medial compartment osteoarthritis", "medial cartilage preserved", "normal medial compartment", "preserved medial joint space", "medial compartment is intact", "no medial oa"]
+      es: ["sin artrosis medial", "cartílago medial conservado", "sin gonartrosis medial"]
       fr: ["pas de gonarthrose médiale", "cartilage fémoro-tibial médial intact"]
       de: ["keine mediale gonarthrose", "medialer gelenkknorpel erhalten"]
     uncertain_terms:
-      en: ["mild medial joint space narrowing", "mild medial degenerative change", "early medial oa"]
+      en: ["mild medial joint space narrowing", "mild medial degenerative change", "early medial oa", "grade 1 medial chondromalacia", "grade 2 medial chondromalacia"]
     exclusions: []
 
   Lateral OA:
     official_name: "Lateral OA"
     full_name: "Lateral Compartment Osteoarthritis"
     positive_terms:
-      en: ["lateral compartment osteoarthritis", "lateral oa", "lateral joint space narrowing", "lateral compartment cartilage loss", "lateral chondromalacia grade 3", "lateral chondromalacia grade 4", "lateral compartment arthrosis", "lateral osteophytes"]
-      es: ["artrosis compartimento externo", "gonartrosis lateral", "desgaste cartílago compartimento lateral"]
-      fr: ["gonarthrose fémoro-tibiale latérale", "arthrose externe du genou", "pincement fémoro-tibial latéral"]
-      de: ["laterale gonarthrose", "arthrose des lateralen kompartiments", "lateraler gelenkknorpelverlust"]
+      en: ["lateral compartment osteoarthritis", "lateral oa", "oa of lateral compartment", "oa of lateral", "oa lateral", "lateral compartment oa", "lateral joint space narrowing", "lateral compartment cartilage loss", "lateral chondromalacia grade 3", "lateral chondromalacia grade 4", "lateral compartment arthrosis", "lateral osteophytes", "lateral tibial plateau chondrosis", "lateral femoral condyle chondrosis", "oa femorotibial lateral", "femorotibial lateral oa", "lateral knee osteoarthritis"]
+      es: ["artrosis compartimento externo", "gonartrosis lateral", "desgaste cartílago compartimento lateral", "artrosis lateral", "oa femorotibial lateral", "artrosis femorotibial externa", "condropatía lateral grado 3", "condropatia lateral"]
+      fr: ["gonarthrose fémoro-tibiale latérale", "arthrose externe du genou", "pincement fémoro-tibial latéral", "gonarthrose latérale", "arthrose latérale"]
+      de: ["laterale gonarthrose", "arthrose des lateralen kompartiments", "lateraler gelenkknorpelverlust", "laterale arthrose"]
+      hr: ["oa lateralnog", "artroza lateralnog", "hondromalacija lateralnog", "denudacija hrskavice lateralnog", "gonartrotske promjene lateralnog"]
+      tr: ["lateral osteoartrit", "lateral kompartmanda kıkırdak kaybı", "lateral gonartroz"]
+      el: ["οστεοαρθρίτιδα έξω διαμερίσματος"]
+      bg: ["латерална гонартроза"]
     negative_terms:
-      en: ["no lateral compartment osteoarthritis", "lateral cartilage preserved", "normal lateral compartment", "preserved lateral joint space"]
+      en: ["no lateral compartment osteoarthritis", "lateral cartilage preserved", "normal lateral compartment", "preserved lateral joint space", "no lateral oa"]
       es: ["sin artrosis lateral", "cartílago lateral conservado"]
       fr: ["pas de gonarthrose latérale", "cartilage fémoro-tibial latéral préservé"]
       de: ["keine laterale gonarthrose", "lateraler gelenkknorpel erhalten"]
     uncertain_terms:
-      en: ["mild lateral degenerative change", "early lateral oa"]
+      en: ["mild lateral degenerative change", "early lateral oa", "grade 1 lateral chondromalacia", "grade 2 lateral chondromalacia"]
     exclusions: []
 
   PF OA:
     official_name: "PF OA"
     full_name: "Patellofemoral Osteoarthritis"
     positive_terms:
-      en: ["patellofemoral osteoarthritis", "pf oa", "patellofemoral arthrosis", "patellofemoral joint space narrowing", "trochlear cartilage loss", "patellar cartilage loss", "chondromalacia patellae grade 3", "chondromalacia patellae grade 4", "severe patellofemoral chondrosis", "patellar osteophytes"]
-      es: ["artrosis femoropatelar", "gonartrosis femoropatelar", "condromalacia rotuliana grado 3", "condromalacia rotuliana grado 4"]
-      fr: ["arthrose fémoro-patellaire", "chondropathie fémoro-patellaire sévère", "pincement fémoro-patellaire"]
-      de: ["retropatellare arthrose", "femoropatellare gonarthrose", "chondromalacia patellae grad 3", "chondromalacia patellae grad 4"]
+      en: ["patellofemoral osteoarthritis", "pf oa", "oa patellofemoral", "oa of patellofemoral", "patellofemoral arthrosis", "patellofemoral joint space narrowing", "trochlear cartilage loss", "patellar cartilage loss", "chondromalacia patellae grade 3", "chondromalacia patellae grade 4", "severe patellofemoral chondrosis", "patellar osteophytes", "pf arthrosis", "patellofemoral compartment oa", "high grade chondromalacia patellae", "chondromalacia patellae grade iii", "chondromalacia patellae grade iv"]
+      es: ["artrosis femoropatelar", "gonartrosis femoropatelar", "condromalacia rotuliana grado 3", "condromalacia rotuliana grado 4", "condropatía rotuliana", "condropatia rotuliana", "artrosis patelofemoral", "oa patelofemoral", "condromalacia patelar severa"]
+      fr: ["arthrose fémoro-patellaire", "chondropathie fémoro-patellaire sévère", "pincement fémoro-patellaire", "arthrose patello-fémorale", "chondropathie rotulienne sévère", "chondromalacie rotulienne stade 3", "chondromalacie rotulienne stade 4"]
+      de: ["retropatellare arthrose", "femoropatellare gonarthrose", "chondromalacia patellae grad 3", "chondromalacia patellae grad 4", "femoropatellararthrose", "retropatellararthrose"]
+      hr: ["pf artrotske promjene", "hondromalacija patele", "hondromalacija iii", "hondromalacija iv", "artroza patele", "patelofemoralna artroza"]
+      tr: ["patellofemoral osteoartrit", "patellofemoral kıkırdak kaybı", "kondromalazi patella evre 3", "kondromalazi patella evre 4"]
+      el: ["επιγονατιδομηριαία οστεοαρθρίτιδα", "χονδροπάθεια επιγονατίδας"]
+      bg: ["пателофеморална остеоартроза", "пателарна хондромалация"]
     negative_terms:
-      en: ["no patellofemoral osteoarthritis", "patellofemoral joint is normal", "normal patellofemoral cartilage", "preserved patellofemoral joint space"]
-      es: ["sin artrosis femoropatelar", "articulación femororrotuliana normal"]
-      fr: ["pas d'arthrose fémoro-patellaire", "cartilage fémoro-patellaire intact"]
+      en: ["no patellofemoral osteoarthritis", "patellofemoral joint is normal", "normal patellofemoral cartilage", "preserved patellofemoral joint space", "no pf oa", "normal patella cartilage"]
+      es: ["sin artrosis femoropatelar", "articulación femororrotuliana normal", "sin condropatía rotuliana"]
+      fr: ["pas d'arthrose fémoro-patellaire", "cartilage fémoro-patellaire intact", "articulation fémoro-patellaire normale"]
       de: ["keine retropatellare arthrose", "regelrechtes femoropatellargelenk"]
     uncertain_terms:
-      en: ["mild patellar chondromalacia", "early patellofemoral degeneration"]
+      en: ["mild patellar chondromalacia", "early patellofemoral degeneration", "grade 1 chondromalacia patellae", "grade 2 chondromalacia patellae"]
     exclusions: []
 
   Effusion:
     official_name: "Effusion"
     full_name: "Joint Effusion"
     positive_terms:
-      en: ["joint effusion", "knee effusion", "suprapatellar effusion", "moderate joint effusion", "large joint effusion", "significant knee effusion", "marked joint effusion", "small to moderate effusion", "distension of the joint capsule"]
-      es: ["derrame articular", "derrame intraarticular", "líquido articular aumentado"]
-      fr: ["épanchement intra-articulaire", "hydarthrose", "épanchement articulaire abondant"]
-      de: ["gelenkerguss", "intraartikulärer erguss", "deutlicher gelenkerguss", "suprapatellarer erguss"]
+      en: ["joint effusion", "knee effusion", "suprapatellar effusion", "moderate joint effusion", "large joint effusion", "significant knee effusion", "marked joint effusion", "small to moderate effusion", "distension of the joint capsule", "effusion with synovitis", "effusion is present", "effusion:", "there is joint effusion", "mild effusion", "moderate effusion", "large effusion", "joint fluid collection"]
+      es: ["derrame articular", "derrame intraarticular", "líquido articular aumentado", "derrame con sinovitis", "derrame moderado", "derrame abundante", "derrame suprapatelar"]
+      fr: ["épanchement intra-articulaire", "hydarthrose", "épanchement articulaire abondant", "épanchement articulaire", "épanchement avec synovite"]
+      de: ["gelenkerguss", "intraartikulärer erguss", "deutlicher gelenkerguss", "suprapatellarer erguss", "gelenkerguss mit synovitis", "erguss im kniegelenk"]
+      hr: ["zglobni izljev", "opsežan zglobni izljev", "izljev u koljenu", "izljev sa sinovitisom"]
+      tr: ["eklem efüzyonu", "intraartiküler efüzyon", "suprapatellar bursada efüzyon", "belirgin efüzyon"]
+      el: ["αρθρική συλλογή", "ύδραρθρο", "εξίδρωμα"]
+      bg: ["ставен излив", "ексудат в коляното"]
     negative_terms:
-      en: ["no joint effusion", "no significant joint effusion", "physiologic joint fluid", "no suprapatellar effusion", "absence of joint effusion", "normal fluid amount"]
-      es: ["sin derrame articular", "líquido articular fisiológico"]
-      fr: ["pas d'épanchement articulaire", "liquide synovial physiologique"]
-      de: ["kein gelenkerguss", "physiologische flüssigkeitsmenge"]
+      en: ["no joint effusion", "no significant joint effusion", "physiologic joint fluid", "no suprapatellar effusion", "absence of joint effusion", "normal fluid amount", "no effusion", "without joint effusion"]
+      es: ["sin derrame articular", "líquido articular fisiológico", "sin derrame", "ausencia de derrame"]
+      fr: ["pas d'épanchement articulaire", "liquide synovial physiologique", "sans épanchement"]
+      de: ["kein gelenkerguss", "physiologische flüssigkeitsmenge", "kein erguss"]
+      hr: ["nema zglobnog izljeva", "bez izljeva"]
+      tr: ["efüzyon saptanmadı", "eklem sıvısı normal"]
     uncertain_terms:
-      en: ["trace joint fluid", "minimal joint effusion", "small joint fluid"]
+      en: ["trace joint fluid", "minimal joint effusion", "small joint fluid", "physiologic amount of fluid"]
     exclusions: []
 
   Synovitis:
     official_name: "Synovitis"
     full_name: "Synovitis"
     positive_terms:
-      en: ["synovitis", "synovial hypertrophy", "synovial thickening", "synovial pannus", "synovial enhancement", "pigmented villonodular synovitis", "diffuse synovitis", "nodular synovial proliferation"]
-      es: ["sinovitis", "hipertrofia sinovial", "engrosamiento sinovial"]
-      fr: ["synovite", "épaississement synovial", "hypertrophie synoviale"]
-      de: ["synovitis", "synovialitis", "synoviale hypertrophie", "synovialisverdickung"]
+      en: ["synovitis", "synovial hypertrophy", "synovial thickening", "synovial pannus", "synovial enhancement", "pigmented villonodular synovitis", "diffuse synovitis", "nodular synovial proliferation", "proliferation of synovium", "effusion with synovitis", "synovitis is present"]
+      es: ["sinovitis", "hipertrofia sinovial", "engrosamiento sinovial", "proliferación sinovial", "derrame con sinovitis"]
+      fr: ["synovite", "épaississement synovial", "hypertrophie synoviale", "prolifération synoviale"]
+      de: ["synovitis", "synovialitis", "synoviale hypertrophie", "synovialisverdickung", "synoviale proliferation"]
+      hr: ["sinovitis", "proliferacija sinovije", "hipertrofija sinovije"]
+      tr: ["sinovit", "sinovyal hipertrofi", "sinovyal kalınlaşma", "sinovyal proliferasyon"]
+      el: ["υμενίτιδα", "πάχυνση του υμένα"]
+      bg: ["синовит", "синовиална хипертрофия"]
     negative_terms:
-      en: ["no synovitis", "no synovial thickening", "normal synovium", "unremarkable synovium", "no synovial proliferation"]
-      es: ["sin sinovitis", "sin engrosamiento sinovial"]
-      fr: ["pas de synovite", "synoviale normale"]
+      en: ["no synovitis", "no synovial thickening", "normal synovium", "unremarkable synovium", "no synovial proliferation", "without synovitis"]
+      es: ["sin sinovitis", "sin engrosamiento sinovial", "sinovial normal"]
+      fr: ["pas de synovite", "synoviale normale", "sans synovite"]
       de: ["keine synovitis", "keine synovialitis", "regelrechte synovialmembran"]
+      hr: ["bez sinovitisa", "sinovija uredna"]
+      tr: ["sinovit izlenmedi", "sinovyal kalınlaşma yok"]
     uncertain_terms:
       en: ["possible mild synovitis", "questionable synovial thickening"]
     exclusions: []
@@ -162,15 +210,21 @@ targets:
     official_name: "Baker's"
     full_name: "Baker's Cyst / Popliteal Cyst"
     positive_terms:
-      en: ["baker's cyst", "baker cyst", "bakers cyst", "popliteal cyst", "gastrocnemius-semimembranosus bursa fluid", "distended popliteal bursa", "ruptured baker cyst", "complex baker's cyst"]
-      es: ["quiste de baker", "quiste poplíteo"]
-      fr: ["kyste de baker", "kyste poplité"]
-      de: ["baker-zyste", "bakerzyste", "poplitealzyste"]
+      en: ["baker's cyst", "baker cyst", "bakers cyst", "popliteal cyst", "gastrocnemius-semimembranosus bursa fluid", "distended popliteal bursa", "ruptured baker cyst", "complex baker's cyst", "baker's cyst is present", "cyst of baker", "popliteal fossa cyst"]
+      es: ["quiste de baker", "quiste poplíteo", "quiste popliteo", "bursa poplítea distendida"]
+      fr: ["kyste de baker", "kyste poplité", "kyste poplite"]
+      de: ["baker-zyste", "bakerzyste", "poplitealzyste", "zyste in der poplitealregion"]
+      hr: ["bakerova cista", "bakerova", "poplitealna cista"]
+      tr: ["baker kisti", "popliteal kist", "baker kisti izlendi"]
+      el: ["κύστη baker", "ιγνυακή κύστη"]
+      bg: ["бейкърова киста", "киста на бейкър", "поплитеална киста"]
     negative_terms:
-      en: ["no baker's cyst", "no popliteal cyst", "absence of baker cyst", "popliteal fossa is clear"]
-      es: ["sin quiste de baker", "sin quiste poplíteo"]
-      fr: ["pas de kyste poplité", "absence de kyste de baker"]
+      en: ["no baker's cyst", "no popliteal cyst", "absence of baker cyst", "popliteal fossa is clear", "no baker cyst", "without baker's cyst", "no bakers cyst"]
+      es: ["sin quiste de baker", "sin quiste poplíteo", "fosa poplítea libre"]
+      fr: ["pas de kyste poplité", "absence de kyste de baker", "froid poplité libre"]
       de: ["keine baker-zyste", "keine bakerzyste", "keine poplitealzyste"]
+      hr: ["nema bakerove ciste", "poplitealna jama uredna"]
+      tr: ["baker kisti saptanmadı", "popliteal kist yok"]
     uncertain_terms:
       en: ["tiny popliteal fluid collection", "small fluid in semimembranosus bursa"]
     exclusions: []
@@ -179,15 +233,21 @@ targets:
     official_name: "Contusion"
     full_name: "Bone Contusion / Bone Bruise"
     positive_terms:
-      en: ["bone contusion", "bone bruise", "bone marrow edema", "trabecular microfracture", "subchondral bone contusion", "osseous contusion", "bone marrow contusion", "kissing contusions", "lateral femoral condyle contusion", "tibial plateau contusion"]
-      es: ["contusión ósea", "edema óseo", "edema de médula ósea"]
-      fr: ["contusion osseuse", "œdème médullaire osseux", "œdème osseux"]
-      de: ["knochenkontusion", "bone bruise", "knochenmarködem", "trabekuläre mikrofraktur"]
+      en: ["bone contusion", "bone bruise", "bone marrow edema", "trabecular microfracture", "subchondral bone contusion", "osseous contusion", "bone marrow contusion", "kissing contusions", "lateral femoral condyle contusion", "tibial plateau contusion", "edema of the bone marrow", "bone contusions", "subchondral marrow edema"]
+      es: ["contusión ósea", "edema óseo", "edema de médula ósea", "contusiones óseas", "edema óseo subcondral"]
+      fr: ["contusion osseuse", "œdème médullaire osseux", "œdème osseux", "contusions osseuses", "œdème sous-chondral"]
+      de: ["knochenkontusion", "bone bruise", "knochenmarködem", "trabekuläre mikrofraktur", "subchondrales knochenmarködem"]
+      hr: ["koštani edem", "kostani edem", "edem koštane srži", "kontuzija kosti"]
+      tr: ["kemik iliği ödemi", "kemik kontüzyonu", "trabeküler mikrofraktür", "bone bruise"]
+      el: ["οστικό μώλωπα", "οστικό οίδημα", "οίδημα μυελού των οστών"]
+      bg: ["костно-мозъчен едем", "костна контузия"]
     negative_terms:
-      en: ["no bone contusion", "no bone marrow edema", "no bone bruise", "normal bone marrow signal", "unremarkable bone marrow"]
-      es: ["sin contusión ósea", "sin edema óseo"]
-      fr: ["pas de contusion osseuse", "pas d'œdème médullaire"]
+      en: ["no bone contusion", "no bone marrow edema", "no bone bruise", "normal bone marrow signal", "unremarkable bone marrow", "without bone marrow edema", "no osseous contusion"]
+      es: ["sin contusión ósea", "sin edema óseo", "médula ósea de señal normal"]
+      fr: ["pas de contusion osseuse", "pas d'œdème médullaire", "signal osseux normal"]
       de: ["keine knochenkontusion", "kein bone bruise", "kein knochenmarködem"]
+      hr: ["nema koštanog edema", "koštana srž urednog signala"]
+      tr: ["kemik iliği ödemi saptanmadı", "kemik yapılar normal"]
     uncertain_terms:
       en: ["minimal subchondral edema", "possible subtle bone bruise"]
     exclusions:
@@ -197,15 +257,21 @@ targets:
     official_name: "Fracture"
     full_name: "Fracture"
     positive_terms:
-      en: ["fracture", "tibial plateau fracture", "patellar fracture", "femoral condyle fracture", "avulsion fracture", "segond fracture", "subchondral fracture", "insufficiency fracture", "stress fracture", "cortical breach", "displaced fracture", "non-displaced fracture"]
-      es: ["fractura", "fractura de meseta tibial", "fractura rotuliana", "fractura por avulsión"]
-      fr: ["fracture", "fracture du plateau tibial", "fracture de la rotule", "fracture par avulsion"]
-      de: ["fraktur", "tibiaplateaufraktur", "patellafraktur", "femurkondylenfraktur", "avulsionsfraktur", "stressfraktur"]
+      en: ["fracture", "tibial plateau fracture", "patellar fracture", "femoral condyle fracture", "avulsion fracture", "segond fracture", "subchondral fracture", "insufficiency fracture", "stress fracture", "cortical breach", "displaced fracture", "non-displaced fracture", "osteochondral fracture", "trabecular fracture", "fracture of the tibial plateau", "fracture line", "cortical disruption"]
+      es: ["fractura", "fractura de meseta tibial", "fractura rotuliana", "fractura por avulsión", "fractura osteocondral", "línea de fractura", "disrupción cortical"]
+      fr: ["fracture", "fracture du plateau tibial", "fracture de la rotule", "fracture par avulsion", "fracture ostéochondrale", "trait de fracture"]
+      de: ["fraktur", "tibiaplateaufraktur", "patellafraktur", "femurkondylenfraktur", "avulsionsfraktur", "stressfraktur", "osteochondrale fraktur"]
+      hr: ["fraktura", "prijelom", "osteohondralna fraktura", "avulzijski prijelom", "prijelom platoa tibije"]
+      tr: ["kırık", "fraktür", "osteokondral fraktür", "tibial plato fraktürü", "avülsiyon fraktürü"]
+      el: ["κάταγμα", "οστεοχονδρικό κάταγμα", "ρωγμώδες κάταγμα"]
+      bg: ["фрактура", "остеохондрална фрактура", "счупване"]
     negative_terms:
-      en: ["no fracture", "no acute fracture", "no occult fracture", "no cortical break", "intact bony cortex", "no evidence of fracture"]
-      es: ["sin fractura", "sin fractura aguda", "corticales intactas"]
-      fr: ["pas de fracture", "pas de fracture aiguë", "intégrité corticale"]
-      de: ["keine fraktur", "keine frische fraktur", "keine knöcherne läsion"]
+      en: ["no fracture", "no acute fracture", "no occult fracture", "no cortical break", "intact bony cortex", "no evidence of fracture", "without fracture", "no bony fracture"]
+      es: ["sin fractura", "sin fractura aguda", "corticales intactas", "sin trazo de fractura"]
+      fr: ["pas de fracture", "pas de fracture aiguë", "intégrité corticale", "absence de trait de fracture"]
+      de: ["keine fraktur", "keine frische fraktur", "keine knöcherne läsion", "intakte kortikalis"]
+      hr: ["nema prijeloma", "bez frakture", "kortikalis intaktan"]
+      tr: ["kırık hattı saptanmadı", "akut fraktür izlenmedi"]
     uncertain_terms:
       en: ["possible subtle fracture", "questionable subchondral infraction", "cannot exclude occult fracture"]
     exclusions:

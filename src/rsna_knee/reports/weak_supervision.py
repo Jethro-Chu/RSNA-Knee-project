@@ -1,5 +1,5 @@
 """
-Weak supervision label generator.
+Weak supervision label generator with confidence-weighted loss assignments.
 Processes train.csv radiology reports into structured, versioned pseudo-labels.
 """
 
@@ -18,7 +18,7 @@ def generate_pseudo_labels_dataframe(
     extractor: Optional[ReportAbnormalityExtractor] = None,
 ) -> pd.DataFrame:
     """
-    Generates a structured pseudo-labels DataFrame with soft probabilities, states, and loss masks.
+    Generates a structured pseudo-labels DataFrame with soft probabilities, states, confidence, loss masks, and loss weights.
     """
     if extractor is None:
         extractor = ReportAbnormalityExtractor()
@@ -49,18 +49,29 @@ def generate_pseudo_labels_dataframe(
 
         for target in TARGET_NAMES:
             if has_expert and target in expert_labels:
-                # Expert label takes 100% priority
+                # Expert gold-standard label: highest loss weight (w = 5.0)
                 study_record[f"{target}_prob"] = expert_labels[target]
                 study_record[f"{target}_state"] = "expert_positive" if expert_labels[target] == 1.0 else "expert_negative"
                 study_record[f"{target}_confidence"] = 1.0
                 study_record[f"{target}_loss_mask"] = True
+                study_record[f"{target}_loss_weight"] = 5.0
                 study_record[f"{target}_source"] = "expert"
             else:
                 info = extracted[target]
+                state = info["state"]
                 study_record[f"{target}_prob"] = info["probability"]
-                study_record[f"{target}_state"] = info["state"]
+                study_record[f"{target}_state"] = state
                 study_record[f"{target}_confidence"] = info["confidence"]
                 study_record[f"{target}_loss_mask"] = info["loss_mask"]
+                
+                # Assign confidence-based loss weight
+                if state in ["positive", "negative"]:
+                    study_record[f"{target}_loss_weight"] = 1.0
+                elif state == "uncertain":
+                    study_record[f"{target}_loss_weight"] = 0.0  # Masked
+                else:  # not_mentioned
+                    study_record[f"{target}_loss_weight"] = 0.0  # Masked
+                    
                 study_record[f"{target}_source"] = "nlp_report"
 
         records.append(study_record)
