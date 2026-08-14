@@ -1,0 +1,20 @@
+{
+  "id": "chujethro/rsna-knee",
+  "title": "RSNA Knee",
+  "code_file": "rsna-knee.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [],
+  "dataset_sources": [
+    "chujethro/rsna-knee-checkpoints"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "rsna-knee-abnormality-detection"
+  ],
+  "model_sources": []
+}
