@@ -1,0 +1,41 @@
+seed: 42
+
+data:
+  image_size: 256
+  slices_per_plane:
+    sagittal: 16
+    coronal: 16
+    axial: 16
+  channels_per_slice: 3  # 2.5D adjacent slice triplets
+  batch_size: 2
+  num_workers: 2
+  train_csv: "data/metadata/train.csv"
+  pseudo_labels_csv: "data/pseudo_labels/pseudo_labels_v1.parquet"
+
+model:
+  type: "multi_view_hmil"
+  backbone: "resnet34d"
+  pretrained: true
+  num_targets: 12
+  hidden_dim: 128
+  dropout: 0.2
+
+training:
+  epochs: 12
+  lr: 2.0e-4
+  min_lr: 1.0e-6
+  weight_decay: 1.0e-4
+  loss_type: "asymmetric_loss"
+  asl_gamma_neg: 4.0
+  asl_gamma_pos: 0.5
+  asl_clip: 0.05
+  expert_loss_weight: 1.0
+  pseudo_loss_weight: 0.4
+  mixed_precision: true
+  gradient_accumulation_steps: 4
+  early_stopping_patience: 4
+
+validation:
+  n_folds: 5
+  eval_expert_only: true
+  metric: "macro_roc_auc"

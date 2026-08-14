@@ -1,0 +1,33 @@
+seed: 42
+data:
+  image_size: 256
+  slices_per_series: 16
+  channels_per_slice: 3  # 2.5D adjacent slice stacking (z-1, z, z+1)
+  batch_size: 4
+  num_workers: 2
+  train_csv: "data/metadata/train.csv"
+  pseudo_labels_csv: "data/pseudo_labels/pseudo_labels_v1.parquet"
+
+model:
+  backbone: "resnet34d"
+  pretrained: true
+  num_targets: 12
+  pooling: "target_specific_attention"  # slice-level MIL attention head per target
+  dropout: 0.2
+
+training:
+  epochs: 10
+  lr: 3.0e-4
+  min_lr: 1.0e-6
+  weight_decay: 1.0e-4
+  loss_type: "bce_with_confidence_mask"
+  expert_loss_weight: 1.0
+  pseudo_loss_weight: 0.4
+  mixed_precision: true
+  gradient_accumulation_steps: 2
+  early_stopping_patience: 4
+
+validation:
+  n_folds: 5
+  eval_expert_only: true
+  metric: "macro_roc_auc"

@@ -1,0 +1,25 @@
+# Series and Plane Classification Rules for Knee MRI
+
+planes:
+  sagittal:
+    description_keywords: ["sag", "sagittal", "sagittale"]
+    normal_vector_primary_axis: 0  # X-axis dominant (pointing left-right)
+    threshold: 0.70
+  coronal:
+    description_keywords: ["cor", "coronal", "coronale"]
+    normal_vector_primary_axis: 1  # Y-axis dominant (pointing anterior-posterior)
+    threshold: 0.70
+  axial:
+    description_keywords: ["ax", "axial", "tra", "transverse", "axiale"]
+    normal_vector_primary_axis: 2  # Z-axis dominant (pointing head-foot)
+    threshold: 0.70
+
+sequences:
+  fluid_sensitive:
+    keywords: ["t2", "fs", "pdf", "pd fs", "pdf_fs", "stir", "spair", "t2w_spair", "t2_fs", "fat_sat", "tirm", "dixon_w", "pd_w_fs"]
+    te_threshold_ms: 35.0
+  non_fluid_sensitive:
+    keywords: ["t1", "pd", "t1w", "t1_se", "t1_fse", "spin_echo"]
+  localizer:
+    keywords: ["loc", "scout", "survey", "localizer", "topo", "triplane"]
+    max_slices: 5

@@ -1,0 +1,71 @@
+# RSNA Knee Abnormality Detection Solution Repository
+
+A modular, reproducible, and efficient machine learning pipeline for the **RSNA Knee Abnormality Detection** competition on Kaggle.
+
+---
+
+## 1. Quick Start & Environment Setup
+
+```bash
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run test suite
+pytest tests/ -v
+
+# 3. Generate pseudo-labels from multilingual radiology reports
+python scripts/generate_pseudo_labels.py
+
+# 4. Generate leakage-free stratified cross-validation folds
+python scripts/make_folds.py
+
+# 5. Train 2.5D baseline model on Fold 0
+python scripts/train.py --config configs/baseline.yaml --fold 0
+
+# 6. Run test inference and validate submission schema
+python scripts/infer.py
+```
+
+---
+
+## 2. Directory Layout
+
+```
+├── configs/
+│   ├── baseline.yaml            # Model & training hyperparameters
+│   ├── target_ontology.yaml     # Multilingual clinical NLP rules & synonyms
+│   └── series_mapping.yaml      # Geometric series & plane classification
+├── data/
+│   ├── metadata/                # train.csv, test.csv, sample_submission.csv
+│   └── pseudo_labels/           # Versioned pseudo-label parquets
+├── docs/
+│   ├── competition_facts.md     # Verified competition facts and schemas
+│   ├── rules_audit.md           # Competition rules and compliance audit
+│   ├── validation_strategy.md   # Out-of-fold multi-label GroupKFold strategy
+│   ├── report_labeling.md       # Multilingual NLP report extraction details
+│   ├── experiment_log.md        # Tracked model experiments and benchmarks
+│   └── leakage_audit.md         # Leakage prevention checklist
+├── notebooks/
+│   └── 99_kaggle_inference.ipynb # Self-contained offline Kaggle submission notebook
+├── src/rsna_knee/
+│   ├── constants.py             # 12 canonical target names and column mappings
+│   ├── paths.py                 # Dynamic dataset path discovery
+│   ├── data/                    # DICOM normal projection, 2.5D slicing, dataset
+│   ├── reports/                 # Multilingual NLP report extractor
+│   ├── models/                  # 2.5D CNN backbones + Target-Specific Attention MIL
+│   ├── training/                # Stratified folds, macro ROC-AUC metrics, trainer
+│   └── inference/               # Fast offline inference and submission writer
+├── scripts/
+│   ├── generate_pseudo_labels.py
+│   ├── make_folds.py
+│   ├── train.py
+│   ├── infer.py
+│   └── validate_submission.py
+└── tests/                       # Unit tests for DICOM, metrics, NLP, submission
+```
+
+---
+
+## 3. Kaggle Offline Inference Notebook
+- Standalone notebook: [`notebooks/99_kaggle_inference.ipynb`](notebooks/99_kaggle_inference.ipynb)
+- Mirrored for Kaggle: [`kaggle/RSNA_knee/revised/RSNA_knee.ipynb`](kaggle/RSNA_knee/revised/RSNA_knee.ipynb)
