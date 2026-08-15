@@ -1,0 +1,13 @@
+Target,Best_V40_AUC,Variance,Strongest_Component,Remaining_Opportunity,Priority
+ACL,0.912,0.018,DINOv3 + RadImageNet Coronal/Sagittal,Multi-slice 2.5D continuity for partial tears,HIGH
+MCL,0.9804,0.008,DINOv3 SlotHead (Coronal T2),Near saturation; maintain stability,LOW
+Medial Meniscus,0.9583,0.011,DINOv3 + High-Res Crop,Focal complex/radial tear localization,MEDIUM
+Lateral Meniscus,0.885,0.024,Lateral Meniscus Specialist,Highest remaining headroom; needs 2.5D context,VERY HIGH
+Medial OA,0.982,0.006,RadImageNet + DINOv3 (Coronal),High performance; preserve intact,LOW
+Lateral OA,0.892,0.021,Lateral OA Specialist,Joint space narrowing 2.5D measurement,HIGH
+PF OA,0.918,0.019,Axial/Sagittal Multi-Plane,Patellofemoral tracking & trochlear dysplasia,HIGH
+Effusion,0.9762,0.007,DINOv3 (Fluid Sensitive),Near saturation; maintain stability,LOW
+Synovitis,0.884,0.022,Synovitis Specialist,Synovial proliferation vs effusion separation,VERY HIGH
+Baker's,0.9762,0.008,DINOv3 (Popliteal Fossa Sagittal),Near saturation; preserve intact,LOW
+Contusion,0.882,0.023,RadImageNet ResNet50 (Marrow Sensitive),Volumetric 3-plane bone marrow edema aggregation,HIGH
+Fracture,0.902,0.020,RadImageNet ResNet50,Cortical disruption fine-resolution multi-slice,HIGH

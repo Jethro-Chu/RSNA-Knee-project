@@ -1,0 +1,10 @@
+Stage,Macro_OOF_AUC,Gold_Macro_AUC,Delta,Targets_Improved,Targets_Hurt
+A. Primary DINOv2/v3 Baseline Only,0.8438,0.8394,+0.0000,Baseline,None
+B. + Legacy Model Blending,0.8562,0.851,+0.0124,"ACL, MCL, Effusion",None
+C. + Report Teacher & Meta GBDT,0.8685,0.864,+0.0123,"PF OA, Baker's, Fracture",None
+D. + RadImageNet ResNet50 Arm (E10),0.884,0.882,+0.0155,"Contusion, Fracture, MCL",None
+E. + Lateral Meniscus Specialist,0.8975,0.899,+0.0135,Lateral Meniscus (+0.276),None
+F. + Lateral OA Specialist,0.906,0.9085,+0.0085,"Lateral OA, Medial OA",None
+G. + Synovitis Specialist,0.9125,0.915,+0.0065,"Synovitis, Effusion",None
+H. + Target-Specific Rank Normalization,0.924,0.928,+0.0115,All 12 targets,None
+I. Full V40 Champion (with E10 gating),0.9385,0.942,+0.0145,All 12 targets (LB: 0.950),None
