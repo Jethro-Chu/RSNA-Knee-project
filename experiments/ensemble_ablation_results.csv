@@ -1,0 +1,5 @@
+ensemble_configuration,macro_oof_auc,gold_macro_auc,public_lb_score,runtime
+Pilkwang DINOv2 Single Checkpoint,0.8438,0.8394,0.868,2.5h
+Yash EfficientNet-B3 5-Fold MIL,0.8544,0.8568,0.903,4.2h
+Salem 0.909 Tri-Family Ensemble (DINOv2 + RadImageNet + Meta),0.871,0.882,0.909,3.8h
+Best Validated Ensemble (0.909 Tri-Family + Rank Normalization),0.8825,0.894,0.912 (Projected),3.9h

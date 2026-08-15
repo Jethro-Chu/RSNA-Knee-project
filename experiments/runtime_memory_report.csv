@@ -1,0 +1,5 @@
+pipeline,device,resolution,slices,vram_gb,inference_sec_per_study,full_test_runtime
+Shared HMIL Version 19,Dual T4 GPU,224x224,8,2.8,0.016,0.4h
+Pilkwang DINOv2 Baseline,Dual T4 GPU,336x336,12,4.1,0.085,2.5h
+Yash EfficientNet-B3 5-Fold,Dual T4 GPU,384x384,12,5.2,0.12,4.2h
+Salem 0.909 Tri-Family Ensemble,Dual T4 GPU,336x336 + 256x256,16,6.8,0.145,3.8h

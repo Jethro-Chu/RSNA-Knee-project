@@ -1,0 +1,74 @@
+{
+  "manifest_version": "1.0",
+  "competition": "rsna-knee-abnormality-detection",
+  "generated_at": "2026-08-15T10:50:00Z",
+  "public_notebooks": [
+    {
+      "id": "salemali7/rsna-knee-90-reports-llm-30-epochs",
+      "title": "RSNA Knee +90% reports LLM 30 epochs",
+      "reported_score": 0.909,
+      "reproduced_local_oof_macro_auc": 0.8710,
+      "architecture": "DINOv2-small Slot Attention + ResNet50 RadImageNet Multi-Plane + Tabular GBDT",
+      "attached_datasets": [
+        "mattiaangeli/knee-mri-fold-weights",
+        "marwanmath/resnet-50-radimagenet-marwan",
+        "antoinegg1/rsna-knee-e9-radimagenet-heads-v15",
+        "flight0234/rsna-knee-hybrid-report-labels",
+        "stevenleehans/rsna-knee-llm-report-labels",
+        "lixin73/rsna-knee-llm-report-labels-sol56",
+        "pilkwang/rsna-knee-llm-labels",
+        "mattiaangeli/rsna-knee-radimagenet-foldsv1-heads",
+        "pilkwang/rsna-knee-weights",
+        "tonylica/rsna2026-models"
+      ],
+      "provenance": "Ensemble fork combining Pilkwang DINOv2 and Antoinegg RadImageNet ResNet50"
+    },
+    {
+      "id": "yashbishnoi98/rsna-knee-infer-v1",
+      "title": "RSNA Knee infer v1 (Yash Bishnoi)",
+      "reported_score": 0.903,
+      "verified_cv_macro_auc": 0.8544,
+      "verified_crossfit_gold_auc": 0.8568,
+      "architecture": "EfficientNet-B3 Multi-Instance Learning (Max-pooling over 12 slices)",
+      "training_config": {
+        "backbone": "efficientnet_b3",
+        "slices_per_series": 12,
+        "pooling": "max",
+        "series_per_study": 3,
+        "loss": "BCEWithLogitsLoss",
+        "folds": 5
+      },
+      "provenance": "Independent MIL pipeline documented on Hugging Face"
+    },
+    {
+      "id": "pilkwang/rsna-knee-baseline-v1",
+      "title": "RSNA Knee baseline v1",
+      "reported_score": 0.868,
+      "verified_checkpoint": "m_013dc75703.pt",
+      "verified_gold_auc": 0.8394,
+      "verified_holdout_auc": 0.8438,
+      "architecture": "facebook/dinov2-small with SlotHead Attention (336x336, 12 slices)",
+      "provenance": "Foundational public baseline for all 0.90+ DINOv2 forks"
+    }
+  ],
+  "label_datasets": [
+    {
+      "id": "pilkwang/rsna-knee-llm-labels",
+      "files": ["report_labels_v2.csv"],
+      "studies_count": 4406,
+      "gold_alignment": "100% matched"
+    },
+    {
+      "id": "stevenleehans/rsna-knee-llm-report-labels",
+      "files": ["llm_labels_full.csv", "llm_labels_v4_blend.csv"],
+      "studies_count": 4407,
+      "gold_alignment": "100% matched"
+    },
+    {
+      "id": "lixin73/rsna-knee-llm-report-labels-sol56",
+      "files": ["report_labels_gpt56sol.csv"],
+      "studies_count": 4407,
+      "gold_alignment": "100% matched"
+    }
+  ]
+}

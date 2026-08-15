@@ -1,0 +1,13 @@
+target,Shared_HMIL_v19,Pilkwang_DINOv2,Yash_EffNet_B3,Salem_0.909_Ensemble,Best_Model
+ACL,0.5518,0.8687,0.862,0.884,Salem 0.909 Ensemble
+MCL,0.5313,0.9804,0.871,0.965,Pilkwang DINOv2
+Medial Meniscus,0.6936,0.9583,0.885,0.941,Pilkwang DINOv2
+Lateral Meniscus,0.558,0.5556,0.814,0.832,Salem 0.909 Ensemble
+Medial OA,0.546,1.0,0.849,0.978,Pilkwang DINOv2
+Lateral OA,0.5249,0.6154,0.793,0.825,Salem 0.909 Ensemble
+PF OA,0.5232,0.7857,0.862,0.891,Salem 0.909 Ensemble
+Effusion,0.6981,0.9762,0.892,0.954,Pilkwang DINOv2
+Synovitis,0.6419,0.6768,0.841,0.862,Salem 0.909 Ensemble
+Baker's,0.7297,0.9762,0.884,0.962,Pilkwang DINOv2
+Contusion,0.6587,0.8,0.821,0.854,Salem 0.909 Ensemble
+Fracture,0.6567,0.88,0.875,0.892,Salem 0.909 Ensemble

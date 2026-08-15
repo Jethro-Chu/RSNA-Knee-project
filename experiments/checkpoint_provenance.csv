@@ -1,0 +1,5 @@
+checkpoint_file,origin_dataset,family,epochs,unfreeze_layers,loss,reused_by_notebooks
+m_013dc75703.pt,pilkwang/rsna-knee-weights,DINOv2 Slot Attention,30,6,BCEWithLogitsLoss,"pilkwang/rsna-knee-baseline-v1, salemali7/rsna-knee-90-reports-llm-30-epochs, mattiaangeli/bend-the-knee-to-dinov3-ensembled, aadigupta7686/0-899-let-me-cook"
+resnet50_radimagenet_m0.pt,antoinegg1/rsna-knee-e9-radimagenet-heads-v15,RadImageNet ResNet50 Multi-Plane,15,All,Asymmetric Loss,"salemali7/rsna-knee-90-reports-llm-30-epochs, mattiaangeli/bend-the-knee-to-dinov3-ensembled"
+effnet_b3_fold0_best.pt,yashbishnoi98/rsna-knee-infer-v1,EfficientNet-B3 MIL,8,All,BCEWithLogitsLoss,yashbishnoi98/rsna-knee-infer-v1
+shared_stem_hmil_fold0_v19.pt,chujethro/rsna-knee-project (Internal),Custom 2D CNN Shared Stem HMIL,3,All,"Asymmetric Loss (gamma-=4.0, gamma+=0.5)",wenwen12/rsna-knee (Version 19)
