@@ -1,8 +1,7 @@
 import json
 from pathlib import Path
 
-nb_path = Path("notebooks/01_kaggle_train.ipynb")
-with open(nb_path, "r") as f:
+with open("/tmp/orig_train.ipynb", "r") as f:
     nb = json.load(f)
 
 # Cell 5 (the training loop cell)
@@ -212,18 +211,18 @@ print(f" OVERALL 5-FOLD OOF MACRO ROC-AUC: {master_oof_macro:.4f}")
 print(f"{'='*60}")
 
 # Save OOF Parquet
-oof_df = pd.DataFrame(oof_predictions, columns=[f"{t}_pred" for t in TARGET_NAMES])
+oof_df = pd.DataFrame(oof_predictions, columns=[f\"{t}_pred\" for t in TARGET_NAMES])
 oof_df.insert(0, ID_COLUMN, processed_df[ID_COLUMN])
-oof_df["fold"] = processed_df["fold"]
+oof_df[\"fold\"] = processed_df[\"fold\"]
 for k, t in enumerate(TARGET_NAMES):
-    oof_df[f"{t}_target"] = oof_targets[:, k]
-    oof_df[f"{t}_loss_mask"] = oof_masks[:, k]
-oof_path = Path("/kaggle/working/oof_predictions_v1.parquet") if Path("/kaggle/working").exists() else Path("experiments/oof_predictions_v1.parquet")
+    oof_df[f\"{t}_target\"] = oof_targets[:, k]
+    oof_df[f\"{t}_loss_mask\"] = oof_masks[:, k]
+oof_path = Path(\"/kaggle/working/oof_predictions_v1.parquet\") if Path(\"/kaggle/working\").exists() else Path(\"experiments/oof_predictions_v1.parquet\")\n",
 oof_df.to_parquet(oof_path, index=False)
-print(f"[+] Exported OOF predictions -> {oof_path}")
+print(f\"[+] Exported OOF predictions -> {oof_path}\")
 """
 
-nb["cells"][2]["source"] = [line + "\n" for line in train_cell_source.splitlines()]
+nb["cells"][5]["source"] = [line + "\n" for line in train_cell_source.splitlines()]
 
 # Save notebooks
 with open("notebooks/01_kaggle_train.ipynb", "w") as f:
