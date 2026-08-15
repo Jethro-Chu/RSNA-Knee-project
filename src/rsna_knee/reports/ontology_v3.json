@@ -1,0 +1,309 @@
+{
+  "ACL": {
+    "anatomy_terms": {
+      "en": ["anterior cruciate ligament", "acl", "anterior cruciate"],
+      "es": ["ligamento cruzado anterior", "lca"],
+      "fr": ["ligament croise anterieur", "ligament croisé antérieur", "lca"],
+      "de": ["vorderes kreuzband", "vkb"],
+      "hr": ["prednja ukrizena sveza", "prednja ukrižena sveza", "prednji ukrsteni ligament", "prednji ukršteni ligament", "acl"],
+      "el": ["προσθιος χιαστος", "πρόσθιος χιαστός", "πχσ"]
+    },
+    "definite_positive_terms": [
+      "complete tear", "full thickness tear", "complete rupture", "ruptured", "torn",
+      "rotura completa", "rotura total", "desgarro completo", "rupture complete", "rupture totale",
+      "vollstandige ruptur", "komplette ruptur", "kompletan rascjep", "potpuni rascjep", "πληρης ρηξη"
+    ],
+    "probable_positive_terms": [
+      "tear", "rotura", "desgarro", "rupture", "ruptur", "rascjep", "ρηξη",
+      "partial tear", "partial rupture", "high grade sprain", "rotura parcial",
+      "fiber discontinuity", "discontinuidad de fibras", "avulsion", "avulsion fracture of acl insertion"
+    ],
+    "possible_positive_terms": [
+      "sprain", "esguince", "distension", "zerrung", "istegnute",
+      "mucoid degeneration", "transformacion quistica", "edematous", "edematoso", "signal alteration"
+    ],
+    "negative_terms": [
+      "intact", "intacto", "intacte", "intakt", "očuvana", "ocuvana", "akereos", "ακεραιος",
+      "unremarkable", "normal in signal and morphology", "sin alteraciones", "sans anomalie",
+      "continuous", "continuo", "preservado", "preserved"
+    ]
+  },
+  "MCL": {
+    "anatomy_terms": {
+      "en": ["medial collateral ligament", "mcl", "tibial collateral ligament"],
+      "es": ["ligamento colateral medial", "ligamento colateral interno", "lcm", "lci"],
+      "fr": ["ligament collateral medial", "ligament collatéral médial", "ligament lateral interne", "lcm", "lli"],
+      "de": ["mediales kollateralband", "innenband", "mcl"],
+      "hr": ["medijalni kolateralni ligament", "unutarnji kolateralni ligament", "mcl"],
+      "el": ["εσω πλαγιος συνδεσμος", "έσω πλάγιος σύνδεσμος", "επσ"]
+    },
+    "definite_positive_terms": [
+      "complete tear", "full thickness tear", "grade 3 sprain", "complete rupture", "ruptured",
+      "rotura completa", "rotura total", "desgarro completo", "rupture complete", "komplette ruptur", "πληρης ρηξη"
+    ],
+    "probable_positive_terms": [
+      "tear", "rotura", "desgarro", "rupture", "ruptur", "rascjep", "ρηξη",
+      "partial tear", "grade 2 sprain", "rotura parcial", "desgarro parcial", "rupture partielle"
+    ],
+    "possible_positive_terms": [
+      "sprain", "grade 1 sprain", "esguince", "distension", "zerrung",
+      "periligamentous edema", "edema periligamentoso", "edema along mcl", "thickened", "thickening",
+      "high signal in soft tissue medial to mcl", "high signal in the soft tissue medial to the medial collateral ligament"
+    ],
+    "negative_terms": [
+      "intact", "intacto", "intakt", "očuvan", "ocuvan", "unremarkable", "normal", "sin alteraciones", "preserved"
+    ]
+  },
+  "Medial Meniscus": {
+    "compartment": "medial",
+    "anatomy_terms": {
+      "en": ["medial meniscus", "medial meniscal", "posterior horn medial meniscus", "anterior horn medial meniscus", "medial meniscus body", "mm", "menisci", "both menisci"],
+      "es": ["menisco medial", "menisco interno", "cuerno posterior del menisco interno", "cuerno anterior del menisco interno", "cuerpo del menisco medial", "meniscos", "ambos meniscos"],
+      "fr": ["menisque medial", "ménisque médial", "menisque interne", "ménisque interne", "corne posterieure du menisque interne", "menisques", "ménisques"],
+      "de": ["innenmeniskus", "medialer meniskus", "innenmeniskushinterhorn", "innenmeniskusvorderhorn", "menisken", "beide menisken"],
+      "hr": ["medijalni menisk", "unutarnji menisk", "straznji rog medijalnog meniska", "prednji rog medijalnog meniska", "menisci", "oba meniska"],
+      "el": ["εσω μηνισκος", "έσω μηνίσκος", "οπισθιο κερας εσω μηνισκου", "μηνισκοι"]
+    },
+    "definite_positive_terms": [
+      "complex tear", "radial tear", "horizontal tear", "vertical tear", "bucket handle tear", "root tear", "displaced tear",
+      "rotura compleja", "rotura radial", "rotura horizontal", "rotura en asa de cubo", "rotura de raiz",
+      "complexe ruptur", "korbhenkelriss", "wurzelriss", "kompleksni rascjep"
+    ],
+    "probable_positive_terms": [
+      "tear", "rotura", "desgarro", "rupture", "ruptur", "rascjep", "ρηξη", "fissure", "flap tear"
+    ],
+    "possible_positive_terms": [
+      "maceration", "macerado", "extrusion", "meniscal extrusion", "extrusio", "fraying",
+      "degenerative signal", "grade 2 signal", "cambios degenerativos", "senales intrameniscales"
+    ],
+    "negative_terms": [
+      "intact", "intacto", "intactos", "intakt", "očuvan", "ocuvan", "očuvani", "ocuvani", "unremarkable", "not torn", "no esta roto", "sin rotura", "sin roturas", "preservado", "normal", "normales"
+    ]
+  },
+  "Lateral Meniscus": {
+    "compartment": "lateral",
+    "anatomy_terms": {
+      "en": ["lateral meniscus", "lateral meniscal", "posterior horn lateral meniscus", "anterior horn lateral meniscus", "lateral meniscus body", "lm", "menisci", "both menisci"],
+      "es": ["menisco lateral", "menisco externo", "cuerno posterior del menisco externo", "cuerno anterior del menisco externo", "cuerpo del menisco lateral", "meniscos", "ambos meniscos"],
+      "fr": ["menisque lateral", "ménisque latéral", "menisque externe", "ménisque externe", "corne posterieure du menisque externe", "menisques", "ménisques"],
+      "de": ["aussenmeniskus", "lateraler meniskus", "aussenmeniskushinterhorn", "aussenmeniskusvorderhorn", "menisken", "beide menisken"],
+      "hr": ["lateralni menisk", "vanjski menisk", "straznji rog lateralnog meniska", "prednji rog lateralnog meniska", "menisci", "oba meniska"],
+      "el": ["εξω μηνισκος", "έξω μηνίσκος", "οπισθιο κερας εξω μηνισκου", "μηνισκοι"]
+    },
+    "definite_positive_terms": [
+      "complex tear", "radial tear", "horizontal tear", "vertical tear", "bucket handle tear", "root tear", "displaced tear",
+      "rotura compleja", "rotura radial", "rotura horizontal", "rotura en asa de cubo", "rotura de raiz",
+      "complexe ruptur", "korbhenkelriss", "wurzelriss", "kompleksni rascjep"
+    ],
+    "probable_positive_terms": [
+      "tear", "rotura", "desgarro", "rupture", "ruptur", "rascjep", "ρηξη", "fissure", "flap tear"
+    ],
+    "possible_positive_terms": [
+      "maceration", "macerado", "extrusion", "meniscal extrusion", "fraying",
+      "degenerative signal", "grade 2 signal", "cambios degenerativos", "discoide", "discoid"
+    ],
+    "negative_terms": [
+      "intact", "intacto", "intactos", "intakt", "očuvan", "ocuvan", "očuvani", "ocuvani", "unremarkable", "not torn", "no esta roto", "sin rotura", "sin roturas", "preservado", "normal", "normales"
+    ]
+  },
+  "Medial OA": {
+    "compartment": "medial",
+    "anatomy_terms": {
+      "en": ["medial compartment", "medial tibiofemoral", "medial femoral condyle", "medial tibial plateau", "mfc", "mtp", "medial joint space", "medial compartment cartilage", "tricompartmental"],
+      "es": ["compartimento medial", "compartimento interno", "femorotibial medial", "femorotibial interno", "condilo femoral medial", "platillo tibial medial", "espacio articular medial"],
+      "fr": ["compartiment medial", "compartiment médial", "compartiment interne", "femorotibial medial", "condyle femoral medial", "plateau tibial medial"],
+      "de": ["mediales kompartiment", "mediales femurkondylus", "mediales tibiainnenplateau", "medialer gelenkrspalt", "femorotibialen gelenkkompartiment"],
+      "hr": ["medijalni kompartment", "medijalni zglobni prostor", "medijalni kondil femura", "medijalni tibijalni plato", "medijalni kondil", "ft zgloba"],
+      "el": ["εσω διαμερισμα", "έσω διαμέρισμα", "εσω μηριαιος κονδυλος", "εσω κνημιαιο πλατω", "εσω κνημιαιο κονδυλο", "έσω κνημιαίο κόνδυλο"],
+      "tr": ["medialde", "medial kompartman"]
+    },
+    "definite_positive_terms": [
+      "osteoarthritis", "severe osteoarthritis", "advanced osteoarthritis", "bone on bone", "joint space narrowing",
+      "grade 4 chondromalacia", "grade 4 cartilage defect", "full thickness cartilage loss", "grade 3 chondrosis", "grade 4 chondrosis", "tricompartmental chondrosis", "tricompartmental osteoarthritis",
+      "artrosis avanzada", "gonartrosis", "gonarthrose", "osteoartritis severa", "kraakbeendefect graad 4", "kraakbeendefect graad 3",
+      "denudacija hrskavice", "goanrtrotske", "gonartrotske", "εξαλειψη του αρθρικου χονδρου", "πληρης εξαλειψη του αρθρικου χονδρου", "εκφυλιστικη οστεοαρθριτιδα", "eklem araligi belirgin daralmistir"
+    ],
+    "probable_positive_terms": [
+      "chondrosis", "chondromalacia", "cartilage thinning", "cartilage loss", "cartilage defect", "subchondral sclerosis", "osteophytes", "cartilage fissuring", "fissuring", "cartilage erosion", "cartilage erosions", "marginal spurring",
+      "condromalacia", "artrosis", "osteofitos", "esclerosis subcondral", "reduccion de espacio articular", "pinzamiento articular",
+      "hondromalacija", "kraakbeenletsel", "knorpelschaden", "artrotske promjene", "ekfylistikes", "grade 2 chondromalacia", "grade 2 chondrosis", "chondropathie", "fisure i erozije hrskavica", "οστεοαρθριτιδα"
+    ],
+    "possible_positive_terms": [
+      "mild chondrosis", "mild cartilage thinning", "early degenerative change", "cambios degenerativos leves", "blage artrotske promjene", "mild marginal spurring"
+    ],
+    "negative_terms": [
+      "no chondrosis", "no cartilage loss", "normal joint space", "preserved cartilage", "no focal chondrosis", "sin artrosis", "sin condromalacia", "cartilago conservado", "cartilage is intact"
+    ]
+  },
+  "Lateral OA": {
+    "compartment": "lateral",
+    "anatomy_terms": {
+      "en": ["lateral compartment", "lateral tibiofemoral", "lateral femoral condyle", "lateral tibial plateau", "lfc", "ltp", "lateral joint space", "lateral compartment cartilage", "tricompartmental"],
+      "es": ["compartimento lateral", "compartimento externo", "femorotibial lateral", "femorotibial externo", "condilo femoral lateral", "platillo tibial lateral", "espacio articular lateral"],
+      "fr": ["compartiment lateral", "compartiment latéral", "compartiment externe", "femorotibial lateral", "condyle femoral lateral", "plateau tibial lateral"],
+      "de": ["laterales kompartiment", "laterales femurkondylus", "laterales tibiaaussenplateau", "lateraler gelenkspalt"],
+      "hr": ["lateralni kompartment", "lateralni zglobni prostor", "lateralni kondil femura", "lateralni tibijalni plato", "lateralni kondil", "ft zgloba"],
+      "el": ["εξω διαμερισμα", "έξω διαμέρισμα", "εξω μηριαιος κονδυλος", "εξω κνημιαιο πλατω", "εξω κνημιαιο κονδυλο", "έξω κνημιαίο κόνδυλο"],
+      "tr": ["lateralde", "lateral kompartman"]
+    },
+    "definite_positive_terms": [
+      "osteoarthritis", "severe osteoarthritis", "advanced osteoarthritis", "bone on bone", "joint space narrowing",
+      "grade 4 chondromalacia", "grade 4 cartilage defect", "full thickness cartilage loss", "grade 3 chondrosis", "grade 4 chondrosis", "tricompartmental chondrosis", "tricompartmental osteoarthritis",
+      "artrosis avanzada", "gonartrosis lateral", "osteoartritis severa", "kraakbeendefect graad 4", "kraakbeendefect graad 3",
+      "denudacija hrskavice", "goanrtrotske", "gonartrotske", "εξαλειψη του αρθρικου χονδρου", "eklem araligi belirgin daralmistir"
+    ],
+    "probable_positive_terms": [
+      "chondrosis", "chondromalacia", "cartilage thinning", "cartilage loss", "cartilage defect", "subchondral sclerosis", "osteophytes", "cartilage fissuring", "fissuring", "cartilage erosion", "cartilage erosions", "marginal spurring",
+      "condromalacia", "artrosis", "osteofitos", "esclerosis subcondral", "reduccion de espacio articular", "pinzamiento articular",
+      "hondromalacija", "kraakbeenletsel", "lateraal kraakbeenletsel", "knorpelschaden", "artrotske promjene", "grade 2 chondromalacia", "grade 2 chondrosis", "chondropathie", "fisure i erozije hrskavica", "οστεοαρθριτιδα"
+    ],
+    "possible_positive_terms": [
+      "mild chondrosis", "mild cartilage thinning", "early degenerative change", "cambios degenerativos leves", "blage artrotske promjene", "mild marginal spurring"
+    ],
+    "negative_terms": [
+      "no chondrosis", "no cartilage loss", "normal joint space", "preserved cartilage", "no focal chondrosis", "sin artrosis", "sin condromalacia", "cartilago conservado", "cartilage is intact"
+    ]
+  },
+  "PF OA": {
+    "compartment": "patellofemoral",
+    "anatomy_terms": {
+      "en": ["patellofemoral", "pf", "trochlea", "trochlear groove", "patella", "patellar facet", "retropatellar", "patellar cartilage", "trochlear cartilage", "patellofemoral joint", "tricompartmental"],
+      "es": ["patelofemoral", "femoropatelar", "rotula", "rotuliano", "retrorrotuliano", "troclea femoral", "carilla rotuliana", "cartilago rotuliano"],
+      "fr": ["patellofemoral", "femoropatellaire", "rotule", "trochlee femorale", "retropatellaire", "cartilage rotulien"],
+      "de": ["patellofemoral", "retropatellar", "trochlea", "patella", "patellaknorpel"],
+      "hr": ["patelofemoralni", "pf zglob", "patela", "interfasetarno", "retropatelarno", "trohleja", "patelarna hrskavica", "fp zgloba", "fasete patele"],
+      "el": ["επιγονατιδομηριαια", "επιγονατιδα", "τροχιλια", "αρθρωση επιγονατιδας", "προστθιο διαμερισμα"],
+      "tr": ["patellofemoral", "patella"]
+    },
+    "definite_positive_terms": [
+      "patellofemoral osteoarthritis", "severe patellofemoral oa", "grade 4 chondromalacia patellae", "full thickness patellar cartilage loss", "grade 3 chondromalacia patellae", "grade 4 chondromalacia", "grade 3 chondromalacia", "tricompartmental chondrosis", "tricompartmental osteoarthritis",
+      "artrosis patelofemoral avanzada", "condromalacia rotuliana grado 4", "condromalacia rotuliana grado 3", "pf artrotske promjene", "hondromalacijom iv stupnja", "hondromalacijom iii stupnja", "opsezne osteofite fp zgloba"
+    ],
+    "probable_positive_terms": [
+      "chondromalacia patellae", "patellar chondrosis", "trochlear chondrosis", "patellofemoral oa", "retropatellar cartilage loss", "chondromalacia", "cartilage fissuring", "fissuring", "cartilage erosion", "cartilage thinning",
+      "condromalacia rotuliana", "condromalacia patelar", "artrosis femoropatelar", "hondromalacija patele", "condromalacia",
+      "pf artrotske promjene s reduciranim zglobnim prostorom", "hondromalacija", "grade 2 chondromalacia", "condromalacia grado 2", "hondromalacine promjene"
+    ],
+    "possible_positive_terms": [
+      "mild patellar chondrosis", "grade 1 chondromalacia", "condromalacia grado 1", "blaga hondromalacija", "focal patellar thinning", "hondromalacine promjene 1. stupnja"
+    ],
+    "negative_terms": [
+      "normal patellofemoral compartment", "preserved patellar cartilage", "no chondromalacia", "sin condromalacia rotuliana", "cartilago rotuliano conservado", "sin condromalacia", "no cartilage defects in the trochlea"
+    ]
+  },
+  "Effusion": {
+    "anatomy_terms": {
+      "en": ["joint effusion", "effusion", "intraarticular fluid", "joint fluid", "suprapatellar effusion"],
+      "es": ["derrame articular", "derrame", "liquido articular", "derrame suprapatelar", "abundante liquido", "liquido en bursa"],
+      "fr": ["epanchement articulaire", "épanchement articulaire", "epanchement", "épanchement", "liquide intraarticulaire"],
+      "de": ["gelenkerguss", "erguss", "intraartikulare flussigkeit"],
+      "hr": ["zglobni izljev", "izljev", "hidrops", "intraartikularni izljev"],
+      "el": ["αρθρωτικη συλλογη", "συλλογη υγρου", "υδραρθρος", "ποσοτητα υγρου ενδαρθρικα"],
+      "tr": ["sivi artisi", "eklem ici sivi"]
+    },
+    "definite_positive_terms": [
+      "large joint effusion", "moderate to large effusion", "abundant joint fluid", "abundante derrame", "opsežan izljev", "groser gelenkerguss", "opsezan zglobni izljev"
+    ],
+    "probable_positive_terms": [
+      "joint effusion", "moderate effusion", "effusion is present", "derrame articular", "derrame", "epanchement", "gelenkerguss", "izljev", "συλλογη υγρου", "sivi artisi izlenmistir", "metria posotita ygroy"
+    ],
+    "possible_positive_terms": [
+      "small joint effusion", "trace effusion", "mild fluid", "pequeño derrame", "escaso derrame", "kleiner erguss", "manji izljev", "discreto derrame", "geringer gelenkerguss"
+    ],
+    "negative_terms": [
+      "no joint effusion", "no effusion", "sin derrame", "sans epanchement", "kein gelenkerguss", "bez izljeva", "χωρις συλλογη"
+    ]
+  },
+  "Synovitis": {
+    "anatomy_terms": {
+      "en": ["synovitis", "synovial thickening", "synovial hypertrophy", "synovial enhancement", "synovial proliferation"],
+      "es": ["sinovitis", "engrosamiento sinovial", "hipertrofia sinovial", "proliferacion sinovial"],
+      "fr": ["synovite", "epaissement synovial", "hypertrophie synoviale"],
+      "de": ["synovitis", "synovialisverdickung", "synoviale hypertrophie", "reizsynovialitis", "synovialitis"],
+      "hr": ["sinovitis", "sinovijalno zadebljanje", "sinovijalna hipertrofija", "proliferaciju sinovije", "proliferacija sinovije"],
+      "el": ["υμενιτιδα", "υμενίτιδα", "υμενικη παχυνση"],
+      "tr": ["sinovit", "sinovyal kalinlasma"]
+    },
+    "definite_positive_terms": [
+      "extensive synovitis", "marked synovial thickening", "proliferative synovitis", "sinovitis severa"
+    ],
+    "probable_positive_terms": [
+      "synovitis", "synovial thickening", "thickening of synovium", "sinovitis", "engrosamiento sinovial", "synovite", "sinovijalno zadebljanje", "υμενιτιδα", "reizsynovialitis", "umjerenu proliferaciju sinovije"
+    ],
+    "possible_positive_terms": [
+      "mild synovial thickening", "possible synovitis", "discreto engrosamiento sinovial", "blagi sinovitis", "geringe reizsynovialitis"
+    ],
+    "negative_terms": [
+      "no synovitis", "no synovial thickening", "sin sinovitis", "keine synovitis", "bez sinovitisa"
+    ]
+  },
+  "Baker's": {
+    "anatomy_terms": {
+      "en": ["baker cyst", "baker's cyst", "popliteal cyst", "bakers cyst", "gastrocnemius semimembranosus bursa cyst"],
+      "es": ["quiste de baker", "quiste popliteo", "quiste poplíteo"],
+      "fr": ["kyste de baker", "kyste poplite", "kyste poplité"],
+      "de": ["bakerzyste", "baker zyste", "poplitealzyste", "baker-zyste"],
+      "hr": ["bakerova cista", "bakerova ciste", "poplitealna cista", "baker cista"],
+      "el": ["κυστη baker", "κύστη baker", "ιγνυακη κυστη", "συνοβιακη κυστη baker"],
+      "tr": ["baker kisti", "popliteal kist"]
+    },
+    "definite_positive_terms": [
+      "large baker cyst", "ruptured baker cyst", "baker cyst measuring", "gran quiste de baker", "opsezna bakerova cista", "eymegethi polychori synoviali kysti baker"
+    ],
+    "probable_positive_terms": [
+      "baker cyst", "baker's cyst", "popliteal cyst", "quiste de baker", "quiste popliteo", "kyste de baker", "bakerzyste", "baker zyste", "bakerova cista", "ιγνυακη κυστη", "baker kisti", "poplitealna cista", "baker cista", "kysti baker"
+    ],
+    "possible_positive_terms": [
+      "small baker cyst", "small popliteal fluid collection", "pequeno quiste de baker", "manja bakerova cista", "gering flussigkeit gefullte baker zyste"
+    ],
+    "negative_terms": [
+      "no baker cyst", "no popliteal cyst", "sin quiste de baker", "keine bakerzyste", "bez bakerove ciste"
+    ]
+  },
+  "Contusion": {
+    "anatomy_terms": {
+      "en": ["bone contusion", "bone bruise", "bone marrow edema", "marrow contusion", "osseous contusion", "trabecular microfracture"],
+      "es": ["contusion osea", "contusión ósea", "edema oseo", "edema óseo", "hematoma oseo", "microfracturas trabeculares"],
+      "fr": ["contusion osseuse", "oedeme osseux", "œdème osseux", "impaction osseuse"],
+      "de": ["knochenkontusion", "bone bruise", "knochenmarkodem", "knochenmarködem", "knochenodem"],
+      "hr": ["kostana kontuzija", "koštana kontuzija", "kostani edem", "koštani edem", "bone bruise", "kemik iligi odemi"],
+      "el": ["οστικη θλαση", "οστική θλάση", "οστικο οιδημα", "οστικό οίδημα", "οστεομυελικο οιδημα"],
+      "tr": ["kemik iligi odemi", "kemik kontuzyonu"]
+    },
+    "definite_positive_terms": [
+      "extensive bone marrow edema", "marked bone bruise", "kissing contusions", "contusiones femorotibiales extensas", "opsezan kostani edem"
+    ],
+    "probable_positive_terms": [
+      "bone contusion", "bone bruise", "bone marrow edema", "contusion osea", "edema oseo", "knochenkontusion", "knochenmarkodem", "kostana kontuzija", "kostani edem", "οστικη θλαση", "kemik iligi odemi", "οστεομυελικο οιδημα"
+    ],
+    "possible_positive_terms": [
+      "mild subchondral edema", "focal bone edema", "discreto edema oseo", "blagi kostani edem", "ypio osteomyoliko oidima"
+    ],
+    "negative_terms": [
+      "no bone contusion", "no bone marrow edema", "normal marrow signal", "sin edema oseo", "kein knochenmarkodem", "bez kostanog edema"
+    ]
+  },
+  "Fracture": {
+    "anatomy_terms": {
+      "en": ["fracture", "avulsion fracture", "tibial plateau fracture", "patellar fracture", "femoral condyle fracture", "trabecular fracture", "subchondral fracture", "insufficiency fracture", "subchondral insufficiency fracture"],
+      "es": ["fractura", "fractura por avulsion", "fractura de platillo tibial", "fractura de rotula", "fractura condilea", "fractura subcondral"],
+      "fr": ["fracture", "fracture par arrachement", "fracture du plateau tibial", "fracture sous chondrale"],
+      "de": ["fraktur", "knochenfraktur", "impressionsfraktur", "tibiaplateaufraktur", "ausriss", "knocherner ausriss"],
+      "hr": ["fraktura", "prijelom", "impresijska fraktura", "avulzijski prijelom", "subhondralna fraktura"],
+      "el": ["καταγμα", "κάταγμα", "αποσπαστικο καταγμα", "καταγματα", "κατάγματα", "μικροδοκιδωδη καταγματα"],
+      "tr": ["fraktur", "kirik", "avulsiyon frakturu"]
+    },
+    "definite_positive_terms": [
+      "comminuted fracture", "displaced fracture", "depressed tibial plateau fracture", "avulsion fracture", "fractura conminuta", "fractura desplazada", "impresijska fraktura", "insufficiency fracture", "subchondral insufficiency fracture", "subchondral fracture"
+    ],
+    "probable_positive_terms": [
+      "fracture", "trabecular fracture", "fractura", "prijelom", "fraktur", "καταγμα", "καταγματα", "avulsion", "ausriss", "knocherner ausriss", "kirik", "hairline subchondral fracture"
+    ],
+    "possible_positive_terms": [
+      "suspected occult fracture", "possible microfracture", "sospecha de fractura", "moguca fraktura", "trabecular microfracture"
+    ],
+    "negative_terms": [
+      "no fracture", "no evidence of fracture", "sin fracturas", "sans fracture", "keine fraktur", "bez prijeloma", "χωρις καταγμα"
+    ]
+  }
+}
