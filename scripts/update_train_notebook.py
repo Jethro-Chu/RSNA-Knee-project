@@ -216,10 +216,9 @@ oof_df.insert(0, ID_COLUMN, processed_df[ID_COLUMN])
 oof_df[\"fold\"] = processed_df[\"fold\"]
 for k, t in enumerate(TARGET_NAMES):
     oof_df[f\"{t}_target\"] = oof_targets[:, k]
-    oof_df[f\"{t}_loss_mask\"] = oof_masks[:, k]
-oof_path = Path(\"/kaggle/working/oof_predictions_v1.parquet\") if Path(\"/kaggle/working\").exists() else Path(\"experiments/oof_predictions_v1.parquet\")\n",
+oof_path = Path("/kaggle/working/oof_predictions_v1.parquet") if Path("/kaggle/working").exists() else Path("experiments/oof_predictions_v1.parquet")
 oof_df.to_parquet(oof_path, index=False)
-print(f\"[+] Exported OOF predictions -> {oof_path}\")
+print(f"[+] Exported OOF predictions -> {oof_path}")
 """
 
 nb["cells"][5]["source"] = [line + "\n" for line in train_cell_source.splitlines()]
