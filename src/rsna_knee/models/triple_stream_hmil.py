@@ -52,11 +52,13 @@ class TripleStreamHMILModel(nn.Module):
         meta_dim: int = 16,
         feature_dim: int = 128,
         dropout: float = 0.2,
+        use_anatomical_priors: bool = True,
     ):
         super().__init__()
         self.num_targets = num_targets
         self.feature_dim = feature_dim
         self.planes = ["sagittal", "coronal", "axial"]
+        self.use_anatomical_priors = use_anatomical_priors
 
         # 1. Plane-Specific 2D CNN Stems
         self.stems = nn.ModuleDict({
@@ -99,7 +101,8 @@ class TripleStreamHMILModel(nn.Module):
             for _ in range(num_targets)
         ])
 
-        self._init_anatomical_priors()
+        if self.use_anatomical_priors:
+            self._init_anatomical_priors()
 
     def _init_anatomical_priors(self):
         """
