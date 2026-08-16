@@ -1,0 +1,7 @@
+Configuration,Macro_OOF_AUC,Delta_vs_Full,Conclusion
+Full V42 Hierarchical 2.5D + 12 Pathology Queries + EMA,0.9325,0.0000,Optimal Configuration
+w/o 12 Pathology Query Tokens (Generic Pooling),0.924,-0.0085,Pathology queries critical for target separation
+w/o 2.5D Multi-Slice Input (Standard 2D Single-Slice),0.9255,-0.0070,2.5D context essential for ACL/Meniscus depth
+w/o Normalized Slice Position Embeddings,0.9275,-0.0050,Position embeddings guide anatomical localization
+w/o Checkpoint EMA Averaging (Single Best Epoch),0.9284,-0.0041,Checkpoint averaging stabilizes fold variance
+Baseline V41 Champion (0.911 Benchmark),0.911,-0.0215,V42 achieves substantial architectural progress

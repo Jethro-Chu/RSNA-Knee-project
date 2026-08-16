@@ -1,0 +1,4 @@
+TTA_Scheme,Macro_OOF_AUC,Inference_Time_Multiplier,Decision
+No TTA (Single Pass),0.9325,1.0x,Fast Baseline
+Minimal TTA (Intensity +/-5% + Center Crop +/-5%),0.9352,2.0x,"RETAIN (+0.0027 gain, zero laterality risk)"
+Aggressive TTA (Horizontal Flips + Rotations),0.918,4.0x,REJECT (-0.0145 degradation due to laterality confusion)

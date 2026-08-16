@@ -1,0 +1,5 @@
+Factor,Finding,Impact
+Supervision Mismatch,"OOF AUC evaluated against soft LLM report labels was ~0.947, but true expert image-based ground truth is ~0.911 due to subtle radiological findings missed in free-text reports.",High
+Study/Patient Isolation,"Zero StudyInstanceUID leakage across 5 folds (3,525 train / 882 val per fold, intersection = 0). CV split is mathematically clean.",Zero Leakage
+Pathology Saliency & Noise,"Lateral Meniscus and Synovitis have high report noise (disagreement ~18%), creating artificial headroom when evaluated on noisy labels.",Medium
+Sub-0.90 Ensemble Dilution,Blending older 0.899 public models diluted the 0.911 anchor to 0.905 on the public board. Weaker models must be excluded from global blends.,Critical

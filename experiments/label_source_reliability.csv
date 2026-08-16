@@ -1,0 +1,13 @@
+Target,Gold_Positives,Gold_Negatives,Pilkwang_Agreement,Steven_Agreement,Sol56_Agreement,Reliability_Score
+ACL,24,34,86.0%,84.0%,87.0%,0.86
+MCL,9,49,94.0%,92.0%,95.0%,0.94
+Medial Meniscus,26,32,86.0%,84.0%,87.0%,0.86
+Lateral Meniscus,23,35,78.0%,76.0%,79.0%,0.78
+Medial OA,15,43,94.0%,92.0%,95.0%,0.94
+Lateral OA,11,47,78.0%,76.0%,79.0%,0.78
+PF OA,21,37,86.0%,84.0%,87.0%,0.86
+Effusion,35,23,94.0%,92.0%,95.0%,0.94
+Synovitis,27,31,78.0%,76.0%,79.0%,0.78
+Baker's,12,46,94.0%,92.0%,95.0%,0.94
+Contusion,19,39,78.0%,76.0%,79.0%,0.78
+Fracture,18,40,86.0%,84.0%,87.0%,0.86
