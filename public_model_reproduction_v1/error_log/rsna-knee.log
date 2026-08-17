@@ -1,0 +1,241 @@
+[{"stream_name":"stderr","time":6.5349797160000005,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.535048056,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.535052566,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.53505558,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.121625239,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.121658501,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.121664487,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.121669159,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":8.2848423,"data":"Attached top-level inputs: 14\n"}
+,{"stream_name":"stdout","time":8.284895607,"data":"  - competitions\n"}
+,{"stream_name":"stdout","time":8.284899602,"data":"  - knee-mri-fold-weights\n"}
+,{"stream_name":"stdout","time":8.284902171,"data":"  - models\n"}
+,{"stream_name":"stdout","time":8.284904506,"data":"  - resnet-50-radimagenet-marwan\n"}
+,{"stream_name":"stdout","time":8.284906761,"data":"  - rsna-knee-b3-v47-public-deployment\n"}
+,{"stream_name":"stdout","time":8.284909135,"data":"  - rsna-knee-e11-diverse-heads-v20\n"}
+,{"stream_name":"stdout","time":8.284911508,"data":"  - rsna-knee-e9-radimagenet-heads-v15\n"}
+,{"stream_name":"stdout","time":8.284913738,"data":"  - rsna-knee-hybrid-report-labels\n"}
+,{"stream_name":"stdout","time":8.284915981,"data":"  - rsna-knee-llm-labels\n"}
+,{"stream_name":"stdout","time":8.284918205,"data":"  - rsna-knee-llm-report-labels\n"}
+,{"stream_name":"stdout","time":8.284920518,"data":"  - rsna-knee-llm-report-labels-sol56\n"}
+,{"stream_name":"stdout","time":8.284922737,"data":"  - rsna-knee-radimagenet-foldsv1-heads\n"}
+,{"stream_name":"stdout","time":8.284924973,"data":"  - rsna-knee-weights\n"}
+,{"stream_name":"stdout","time":8.284927173,"data":"  - rsna2026-models\n"}
+,{"stream_name":"stdout","time":8.284929463,"data":"\n"}
+,{"stream_name":"stdout","time":8.28493165,"data":"Artifact audit (presence only; the notebook performs stricter contract/hash checks later):\n"}
+,{"stream_name":"stdout","time":8.284934063,"data":"  competition CSVs               : 3/3 signatures found\n"}
+,{"stream_name":"stdout","time":8.284936339,"data":"  DINOv2 manifest package        : 1/1 signatures found\n"}
+,{"stream_name":"stdout","time":8.284938763,"data":"  DINOv3/fold checkpoints        : 1/1 signatures found\n"}
+,{"stream_name":"stdout","time":8.284941011,"data":"  RadImageNet encoder            : 1/1 signatures found\n"}
+,{"stream_name":"stdout","time":8.284943251,"data":"  public RadImageNet heads       : 1/1 signatures found\n"}
+,{"stream_name":"stdout","time":8.284945473,"data":"  five-fold RadImageNet heads    : 6/6 signatures found\n"}
+,{"stream_name":"stdout","time":8.284947743,"data":"  optional B3 package            : 5/5 signatures found\n"}
+,{"stream_name":"stdout","time":15.244843392,"data":"cuda:0 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":15.28717611,"data":"cuda:1 probe PASS (compute 7.5)\n"}
+,{"stream_name":"stdout","time":15.287211082,"data":"devices: ['cuda:0', 'cuda:1']\n"}
+,{"stream_name":"stdout","time":15.326363992,"data":"[    0.0s] input root: /kaggle/input/competitions/rsna-knee-abnormality-detection\n"}
+,{"stream_name":"stdout","time":15.446902508,"data":"[    0.2s] memory: 29.5 GB available, 13.3 GB to the cache; sizing for 4407 train + 1322 test studies -\u003e 1 group(s) of 3 = 3 slices per slot\n"}
+,{"stream_name":"stdout","time":15.447666026,"data":"[    0.2s] cache layout: 1 groups x 3 slices = 3 per slot\n"}
+,{"stream_name":"stdout","time":33.919012717,"data":"[   18.6s] weights package: 20 member(s) from /kaggle/input/rsna-knee-weights; 2 device(s)\n"}
+,{"stream_name":"stdout","time":34.021442268,"data":"[   18.7s] test header pass: 15 series\n"}
+,{"stream_name":"stdout","time":37.299589818,"data":"[   22.0s] legacy bundle rsna_20260807_v1.pt: 4 fold(s) join with target-specific per-member weights [2.5, 5.0, 15.0]\n"}
+,{"stream_name":"stdout","time":37.305611044,"data":"[   22.0s] decode group 1/2: 336px x 12 slices, crop 130.0 mm -\u003e 20 member(s)\n"}
+,{"stream_name":"stdout","time":37.3272545,"data":"[   22.0s] test laterality: 1 from the tag, 2 from geometry, 0 unresolved; tag and geometry disagree on 0 (0.0% of the tagged)\n"}
+,{"stream_name":"stdout","time":37.328099416,"data":"[   22.0s] test g1: cache (3, 6, 12, 336, 336) = 0.0 GB\n"}
+,{"stream_name":"stdout","time":37.328998998,"data":"[   22.0s] test g1: ordering 12 slot-series (469 slice headers)\n"}
+,{"stream_name":"stdout","time":39.2386662,"data":"[   24.0s] test g1: ordered 12/12 by geometry (0 kept arbitrary) in 2s\n"}
+,{"stream_name":"stdout","time":39.239703207,"data":"[   24.0s] test g1: decoding 12 slot-series\n"}
+,{"stream_name":"stdout","time":40.066335732,"data":"[   24.8s]   test g1 12/12\n"}
+,{"stream_name":"stdout","time":40.294174027,"data":"[   24.8s] test g1: 12/12 slots filled\n"}
+,{"stream_name":"stdout","time":42.811345856,"data":"[   27.3s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":43.535112723,"data":"[   28.3s] e5427d6c21: fingerprint matches within 2.8e-06\n"}
+,{"stream_name":"stdout","time":44.621043126000004,"data":"[   29.0s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":44.875963129,"data":"[   29.6s]   banked e5427d6c21 fold 2 (10 window(s)); submission.csv = weighted rank mean of 1 member(s)\n"}
+,{"stream_name":"stdout","time":45.074828827,"data":"[   29.8s] d47313baef: fingerprint matches within 2.1e-06\n"}
+,{"stream_name":"stdout","time":46.471285154,"data":"[   30.9s]   banked d47313baef fold 2 (10 window(s)); submission.csv = weighted rank mean of 2 member(s)\n"}
+,{"stream_name":"stdout","time":46.471327483,"data":"[   30.9s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":46.597739015,"data":"[   31.3s] ea3fbf6edf: fingerprint matches within 3.8e-06\n"}
+,{"stream_name":"stdout","time":47.855531051,"data":"[   32.2s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":47.952749553,"data":"[   32.7s] 5f8ba4c5ea: fingerprint matches within 3.3e-06\n"}
+,{"stream_name":"stdout","time":48.38112848,"data":"[   33.1s]   banked ea3fbf6edf fold 2 (10 window(s), jitter); submission.csv = weighted rank mean of 3 member(s)\n"}
+,{"stream_name":"stdout","time":49.633696516,"data":"[   34.0s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":49.814813902,"data":"[   34.5s]   banked 5f8ba4c5ea fold 2 (10 window(s), jitter); submission.csv = weighted rank mean of 4 member(s)\n"}
+,{"stream_name":"stdout","time":49.915957584,"data":"[   34.6s] 013dc75703: fingerprint matches within 3.3e-06\n"}
+,{"stream_name":"stdout","time":51.014907811,"data":"[   35.5s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":51.143011137,"data":"[   35.9s] 2f7e785e82: fingerprint matches within 1.1e-06\n"}
+,{"stream_name":"stdout","time":51.633531971,"data":"[   36.4s]   banked 013dc75703 fold 4 (10 window(s), jitter); submission.csv = weighted rank mean of 5 member(s)\n"}
+,{"stream_name":"stdout","time":52.664127416,"data":"[   37.1s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":52.998485945,"data":"[   37.7s] 8baecb9d1b: fingerprint matches within 2.4e-06\n"}
+,{"stream_name":"stdout","time":53.020184841,"data":"[   37.7s]   banked 2f7e785e82 fold 4 (10 window(s), jitter); submission.csv = weighted rank mean of 6 member(s)\n"}
+,{"stream_name":"stdout","time":54.304777846,"data":"[   38.7s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":54.3068058,"data":"[   39.0s] 44bc3c6f14: fingerprint matches within 3.8e-06\n"}
+,{"stream_name":"stdout","time":54.724745733,"data":"[   39.4s]   banked 8baecb9d1b fold 4 (10 window(s), jitter); submission.csv = weighted rank mean of 7 member(s)\n"}
+,{"stream_name":"stdout","time":55.948525106,"data":"[   40.3s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":56.193379811,"data":"[   40.9s] 44128e3ff3: fingerprint matches within 4.3e-06\n"}
+,{"stream_name":"stdout","time":56.210083948,"data":"[   40.9s]   banked 44bc3c6f14 fold 0 (10 window(s), jitter); submission.csv = weighted rank mean of 8 member(s)\n"}
+,{"stream_name":"stdout","time":57.32132261,"data":"[   41.7s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":57.334348893,"data":"[   42.1s] 84079fe8cb: fingerprint matches within 1.2e-06\n"}
+,{"stream_name":"stdout","time":57.853038928,"data":"[   42.6s]   banked 44128e3ff3 fold 0 (10 window(s), jitter); submission.csv = weighted rank mean of 9 member(s)\n"}
+,{"stream_name":"stdout","time":59.02652199,"data":"[   43.4s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":59.205410168,"data":"[   43.9s] ed427aa10a: fingerprint matches within 4.6e-06\n"}
+,{"stream_name":"stdout","time":59.222531094,"data":"[   43.9s]   banked 84079fe8cb fold 3 (10 window(s), jitter); submission.csv = weighted rank mean of 10 member(s)\n"}
+,{"stream_name":"stdout","time":60.275205853,"data":"[   44.7s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":60.354751648,"data":"[   45.1s] 2dce50ebd9: fingerprint matches within 3.8e-06\n"}
+,{"stream_name":"stdout","time":60.878544287,"data":"[   45.6s]   banked ed427aa10a fold 0 (10 window(s), jitter); submission.csv = weighted rank mean of 11 member(s)\n"}
+,{"stream_name":"stdout","time":62.066618811,"data":"[   46.5s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":62.264640095,"data":"[   47.0s]   banked 2dce50ebd9 fold 0 (10 window(s), jitter); submission.csv = weighted rank mean of 12 member(s)\n"}
+,{"stream_name":"stdout","time":62.419583195,"data":"[   47.1s] 3d1f4c48fc: fingerprint matches within 1.3e-06\n"}
+,{"stream_name":"stdout","time":63.736813093,"data":"[   48.1s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":64.103640386,"data":"[   48.8s] 91f171fe6f: fingerprint matches within 2.6e-06\n"}
+,{"stream_name":"stdout","time":64.119579766,"data":"[   48.8s]   banked 3d1f4c48fc fold 4 (10 window(s), jitter); submission.csv = weighted rank mean of 13 member(s)\n"}
+,{"stream_name":"stdout","time":65.264384084,"data":"[   49.6s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":65.299607161,"data":"[   50.0s] 8476b29285: fingerprint matches within 4.4e-06\n"}
+,{"stream_name":"stdout","time":65.791009006,"data":"[   50.5s]   banked 91f171fe6f fold 1 (10 window(s), jitter); submission.csv = weighted rank mean of 14 member(s)\n"}
+,{"stream_name":"stdout","time":67.034138581,"data":"[   51.4s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":67.282453171,"data":"[   52.0s]   banked 8476b29285 fold 1 (10 window(s), jitter); submission.csv = weighted rank mean of 15 member(s)\n"}
+,{"stream_name":"stdout","time":67.321047267,"data":"[   52.0s] 72081758ce: fingerprint matches within 2.9e-06\n"}
+,{"stream_name":"stdout","time":68.399775731,"data":"[   52.9s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":68.536690278,"data":"[   53.3s] 7f8321affc: fingerprint matches within 2.9e-06\n"}
+,{"stream_name":"stdout","time":69.008700074,"data":"[   53.7s]   banked 72081758ce fold 3 (10 window(s), jitter); submission.csv = weighted rank mean of 16 member(s)\n"}
+,{"stream_name":"stdout","time":70.116466355,"data":"[   54.5s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":70.362711155,"data":"[   55.1s] 1e553ba481: fingerprint matches within 1.7e-06\n"}
+,{"stream_name":"stdout","time":70.393521045,"data":"[   55.1s]   banked 7f8321affc fold 3 (10 window(s), jitter); submission.csv = weighted rank mean of 17 member(s)\n"}
+,{"stream_name":"stdout","time":71.460653489,"data":"[   56.0s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":71.636431219,"data":"[   56.4s] b7c37cc80e: fingerprint matches within 1.1e-06\n"}
+,{"stream_name":"stdout","time":72.07013488,"data":"[   56.8s]   banked 1e553ba481 fold 1 (10 window(s), jitter); submission.csv = weighted rank mean of 18 member(s)\n"}
+,{"stream_name":"stdout","time":73.369824973,"data":"[   57.8s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 768\n"}
+,{"stream_name":"stdout","time":73.509606504,"data":"[   58.2s]   banked b7c37cc80e fold 3 (10 window(s), jitter); submission.csv = weighted rank mean of 19 member(s)\n"}
+,{"stream_name":"stdout","time":73.728114518,"data":"[   58.4s] f335c812fe: fingerprint matches within 2.9e-06\n"}
+,{"stream_name":"stdout","time":75.445183074,"data":"[   59.9s]   banked f335c812fe fold 1 (10 window(s), jitter); submission.csv = weighted rank mean of 20 member(s)\n"}
+,{"stream_name":"stdout","time":75.446109828,"data":"[   60.2s] decode group 2/2: 224px x 9 slices, crop 160.0 mm -\u003e 4 member(s)\n"}
+,{"stream_name":"stdout","time":75.470425124,"data":"[   60.2s] test laterality: 1 from the tag, 2 from geometry, 0 unresolved; tag and geometry disagree on 0 (0.0% of the tagged)\n"}
+,{"stream_name":"stdout","time":75.472083957,"data":"[   60.2s] test g2: cache (3, 6, 9, 224, 224) = 0.0 GB\n"}
+,{"stream_name":"stdout","time":75.472914721,"data":"[   60.2s] test g2: ordering 14 slot-series (523 slice headers)\n"}
+,{"stream_name":"stdout","time":76.642547388,"data":"[   61.4s] test g2: ordered 14/14 by geometry (0 kept arbitrary) in 1s\n"}
+,{"stream_name":"stdout","time":76.643584534,"data":"[   61.4s] test g2: decoding 14 slot-series\n"}
+,{"stream_name":"stdout","time":77.3314538,"data":"[   62.0s]   test g2 14/14\n"}
+,{"stream_name":"stdout","time":77.575808139,"data":"[   62.1s] test g2: 14/14 slots filled\n"}
+,{"stream_name":"stdout","time":78.101648998,"data":"[   62.6s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 1152\n"}
+,{"stream_name":"stdout","time":78.102699448,"data":"[   62.7s]   legacy-f0: no stored fingerprint (legacy bundle) -- accepted at reduced weight\n"}
+,{"stream_name":"stdout","time":78.734203719,"data":"[   63.1s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 1152\n"}
+,{"stream_name":"stdout","time":78.735239032,"data":"[   63.3s]   legacy-f1: no stored fingerprint (legacy bundle) -- accepted at reduced weight\n"}
+,{"stream_name":"stdout","time":78.996410183,"data":"[   63.7s]   banked legacy-f0 fold 0 (7 window(s), jitter); submission.csv = weighted rank mean of 21 member(s)\n"}
+,{"stream_name":"stdout","time":79.554732177,"data":"[   64.0s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 1152\n"}
+,{"stream_name":"stdout","time":79.555541754,"data":"[   64.2s]   legacy-f2: no stored fingerprint (legacy bundle) -- accepted at reduced weight\n"}
+,{"stream_name":"stdout","time":79.805904991,"data":"[   64.5s]   banked legacy-f1 fold 1 (7 window(s), jitter); submission.csv = weighted rank mean of 22 member(s)\n"}
+,{"stream_name":"stdout","time":80.479514312,"data":"[   64.9s] backbone: 12 blocks, last 6 trainable (10.7M params), feature dim 1152\n"}
+,{"stream_name":"stdout","time":80.480335449,"data":"[   65.0s]   legacy-f3: no stored fingerprint (legacy bundle) -- accepted at reduced weight\n"}
+,{"stream_name":"stdout","time":80.727138826,"data":"[   65.4s]   banked legacy-f2 fold 2 (7 window(s), jitter); submission.csv = weighted rank mean of 23 member(s)\n"}
+,{"stream_name":"stdout","time":81.456657486,"data":"[   65.9s]   banked legacy-f3 fold 3 (7 window(s), jitter); submission.csv = weighted rank mean of 24 member(s)\n"}
+,{"stream_name":"stdout","time":81.470160265,"data":"[   66.2s] final submission.csv = weighted rank mean of 24 member(s); (3, 13); nulls 0\n"}
+,{"stream_name":"stdout","time":81.479234449,"data":"[   66.2s] submission_public_0899.csv = exact no-jitter public-frontier rank mean of 20 member(s); (3, 13); nulls 0\n"}
+,{"stream_name":"stdout","time":81.494399418,"data":"[   66.2s] master legacy branch: fold-first hard/soft DINO candidate written from 5 fold groups; (3, 13)\n"}
+,{"stream_name":"stdout","time":81.509978639,"data":"[   66.2s] V40 primary = exact no-jitter public-frontier target pooling; native 24-member output retained\n"}
+,{"stream_name":"stdout","time":81.511014478,"data":"[   66.2s] done\n"}
+,{"stream_name":"stdout","time":81.511886973,"data":"[   66.2s] done\n"}
+,{"stream_name":"stdout","time":81.58288081,"data":"master specialist OFF: report-teacher\n"}
+,{"stream_name":"stdout","time":81.582908552,"data":"master specialist OFF: hybrid LM/OA/Synovitis\n"}
+,{"stream_name":"stdout","time":81.582914192,"data":"master specialist OFF: external public family\n"}
+,{"stream_name":"stdout","time":85.003138209,"data":"competition : /kaggle/input/competitions/rsna-knee-abnormality-detection\n"}
+,{"stream_name":"stdout","time":85.003167884,"data":"checkpoints : /kaggle/input/knee-mri-fold-weights\n"}
+,{"stream_name":"stdout","time":85.003174079,"data":"device      : cuda\n"}
+,{"stream_name":"stdout","time":85.003179813,"data":"  gpu0       : Tesla T4 sm_75, 15 GiB, native bf16=False\n"}
+,{"stream_name":"stdout","time":85.003184451,"data":"  gpu1       : Tesla T4 sm_75, 15 GiB, native bf16=False\n"}
+,{"stream_name":"stdout","time":85.069314655,"data":"series root: /kaggle/input/competitions/rsna-knee-abnormality-detection/test_series\n"}
+,{"stream_name":"stdout","time":85.069343799,"data":"3 test studies, 3 with series metadata\n"}
+,{"stream_name":"stdout","time":86.874740374,"data":"loaded m_f0.pt  fold 0  vit_small_patch16_dinov3.lvd1689m pool=xcodex meta=none\n"}
+,{"stream_name":"stdout","time":87.983794418,"data":"loaded m_f1.pt  fold 1  vit_small_patch16_dinov3.lvd1689m pool=xcodex meta=none\n"}
+,{"stream_name":"stdout","time":88.954367427,"data":"loaded m_f2.pt  fold 2  vit_small_patch16_dinov3.lvd1689m pool=xcodex meta=none\n"}
+,{"stream_name":"stdout","time":89.808823832,"data":"loaded m_f3.pt  fold 3  vit_small_patch16_dinov3.lvd1689m pool=xcodex meta=none\n"}
+,{"stream_name":"stdout","time":90.405839046,"data":"loaded m_f4.pt  fold 4  vit_small_patch16_dinov3.lvd1689m pool=xcodex meta=none\n"}
+,{"stream_name":"stdout","time":90.405909152,"data":"\n"}
+,{"stream_name":"stdout","time":90.405916496,"data":"5 fold models ready | input norm: none\n"}
+,{"stream_name":"stdout","time":90.640869477,"data":"device cuda | amp bfloat16 (on=True) | workers 4 | chunk 48 | micro 8\n"}
+,{"stream_name":"stdout","time":94.104181565,"data":"  3/3  0.1m  eta 0.0m\n"}
+,{"stream_name":"stdout","time":94.19592737,"data":"\n"}
+,{"stream_name":"stdout","time":94.195965625,"data":"inference done in 0.1 min\n"}
+,{"stream_name":"stdout","time":96.762985909,"data":"[   81.5s] test-e10 laterality: 1 from the tag, 2 from geometry, 0 unresolved; tag and geometry disagree on 0 (0.0% of the tagged)\n"}
+,{"stream_name":"stdout","time":96.763949031,"data":"[   81.5s] test-e10: cache (3, 3, 8, 224, 224) = 0.0 GB\n"}
+,{"stream_name":"stdout","time":96.765301518,"data":"[   81.5s] test-e10: ordering 8 slot-series (366 slice headers)\n"}
+,{"stream_name":"stdout","time":97.51801196,"data":"[   82.2s] test-e10: ordered 8/8 by geometry (0 kept arbitrary) in 1s\n"}
+,{"stream_name":"stdout","time":97.519112693,"data":"[   82.2s] test-e10: decoding 8 slot-series\n"}
+,{"stream_name":"stdout","time":97.901711899,"data":"[   82.6s]   test-e10 8/8\n"}
+,{"stream_name":"stdout","time":98.181056153,"data":"[   82.6s] test-e10: 8/8 slots filled\n"}
+,{"stream_name":"stdout","time":98.997657516,"data":"[Rad-dual5] public v15 family complete with its legacy pixels (/kaggle/input/rsna-knee-e9-radimagenet-heads-v15/v52_radimagenet_heads.pt)\n"}
+,{"stream_name":"stdout","time":101.277604475,"data":"[Rad-dual5] native family 3/3 studies; elapsed 0.1m, rough eta 0.0m\n"}
+,{"stream_name":"stdout","time":101.595036609,"data":"[Rad-dual5] wrote 0.65*rank(parent)+0.35*(0.5*rank(v15)+0.5*rank(ours)); v15=/kaggle/input/rsna-knee-e9-radimagenet-heads-v15/v52_radimagenet_heads.pt; ours=/kaggle/input/rsna-knee-radimagenet-foldsv1-heads; encoder=/kaggle/input/resnet-50-radimagenet-marwan/ResNet50.pt; preserved raw=[\"Baker's\", 'Fracture']; elapsed=0.1m\n"}
+,{"stream_name":"stdout","time":101.793629175,"data":"master B3 package: /kaggle/input/rsna-knee-b3-v47-public-deployment | nested OOF 0.84631 vs reference 0.84348\n"}
+,{"stream_name":"stdout","time":101.793673903,"data":"master B3 inference budget: 1.75h\n"}
+,{"stream_name":"stdout","time":126.406935844,"data":"3/3 projected_hours=0.00 slices=20 folds=5 errors=0\n"}
+,{"stream_name":"stdout","time":126.418999869,"data":"{\n"}
+,{"stream_name":"stdout","time":126.419021269,"data":"  \"active_models_final\": 5,\n"}
+,{"stream_name":"stdout","time":126.4190265,"data":"  \"checkpoints\": [\n"}
+,{"stream_name":"stdout","time":126.41903161,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold0/fold0_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.4190361,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold1/fold1_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.419040252,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold2/fold2_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.419044607,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold3/fold3_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.419059846,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold4/fold4_final.pt\"\n"}
+,{"stream_name":"stdout","time":126.419063272,"data":"  ],\n"}
+,{"stream_name":"stdout","time":126.419066307,"data":"  \"errors\": {},\n"}
+,{"stream_name":"stdout","time":126.419069555,"data":"  \"eval_slices_final\": 20,\n"}
+,{"stream_name":"stdout","time":126.41907315,"data":"  \"folds\": [\n"}
+,{"stream_name":"stdout","time":126.419076732,"data":"    0,\n"}
+,{"stream_name":"stdout","time":126.419079824,"data":"    1,\n"}
+,{"stream_name":"stdout","time":126.419082907,"data":"    2,\n"}
+,{"stream_name":"stdout","time":126.419085825,"data":"    3,\n"}
+,{"stream_name":"stdout","time":126.419089013,"data":"    4\n"}
+,{"stream_name":"stdout","time":126.419092283,"data":"  ],\n"}
+,{"stream_name":"stdout","time":126.41909585,"data":"  \"series_errors\": {},\n"}
+,{"stream_name":"stdout","time":126.419099689,"data":"  \"status\": \"PASS\",\n"}
+,{"stream_name":"stdout","time":126.419103408,"data":"  \"studies\": 3,\n"}
+,{"stream_name":"stdout","time":126.419108389,"data":"  \"wall_seconds\": 15.327037811279297\n"}
+,{"stream_name":"stdout","time":126.419112393,"data":"}\n"}
+,{"stream_name":"stdout","time":126.609495028,"data":"3/3 projected_hours=0.00 slices=20 folds=5 errors=0\n"}
+,{"stream_name":"stdout","time":126.609531237,"data":"{\n"}
+,{"stream_name":"stdout","time":126.609535933,"data":"  \"active_models_final\": 5,\n"}
+,{"stream_name":"stdout","time":126.609540067,"data":"  \"checkpoints\": [\n"}
+,{"stream_name":"stdout","time":126.609543761,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold0/fold0_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.609547664,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold1/fold1_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.609566528,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold2/fold2_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.609571614,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold3/fold3_final.pt\",\n"}
+,{"stream_name":"stdout","time":126.609577747,"data":"    \"/kaggle/input/rsna-knee-b3-v47-public-deployment/fold4/fold4_final.pt\"\n"}
+,{"stream_name":"stdout","time":126.609581852,"data":"  ],\n"}
+,{"stream_name":"stdout","time":126.609585634,"data":"  \"errors\": {},\n"}
+,{"stream_name":"stdout","time":126.609596669,"data":"  \"eval_slices_final\": 20,\n"}
+,{"stream_name":"stdout","time":126.609600539,"data":"  \"folds\": [\n"}
+,{"stream_name":"stdout","time":126.609604279,"data":"    0,\n"}
+,{"stream_name":"stdout","time":126.609608074,"data":"    1,\n"}
+,{"stream_name":"stdout","time":126.609611495,"data":"    2,\n"}
+,{"stream_name":"stdout","time":126.609615159,"data":"    3,\n"}
+,{"stream_name":"stdout","time":126.609618563,"data":"    4\n"}
+,{"stream_name":"stdout","time":126.609622502,"data":"  ],\n"}
+,{"stream_name":"stdout","time":126.60962592999999,"data":"  \"series_errors\": {},\n"}
+,{"stream_name":"stdout","time":126.609629594,"data":"  \"status\": \"PASS\",\n"}
+,{"stream_name":"stdout","time":126.609633345,"data":"  \"studies\": 3,\n"}
+,{"stream_name":"stdout","time":126.609637156,"data":"  \"wall_seconds\": 15.327037811279297\n"}
+,{"stream_name":"stdout","time":126.60964099,"data":"}\n"}
+,{"stream_name":"stdout","time":129.014596654,"data":"MASTER final = 0.890 target + 0.060 legacy-fold + 0.050 B3 (rank space)\n"}
+,{"stream_name":"stderr","time":131.836498884,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":131.836545328,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":131.836597491,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":131.836601693,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":131.836605183,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":131.836686433,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":131.837716867,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":131.837735684,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":131.837739427,"data":"Exception encountered at \"In [29]\":\n"}
+,{"stream_name":"stderr","time":131.837742216,"data":"  File \"/tmp/ipykernel_23/707525960.py\", line 76\n"}
+,{"stream_name":"stderr","time":131.837744974,"data":"    print(\"\n"}
+,{"stream_name":"stderr","time":131.837747651,"data":"          ^\n"}
+,{"stream_name":"stderr","time":131.837750177,"data":"SyntaxError: unterminated string literal (detected at line 76)\n"}
+,{"stream_name":"stderr","time":131.837752802,"data":"\n"}
+,{"stream_name":"stderr","time":131.837755374,"data":"\n"}
+,{"stream_name":"stderr","time":133.97710901599999,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":133.977155328,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":134.121369536,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":134.121407254,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":134.784476511,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":135.185904022,"data":"[NbConvertApp] Writing 612855 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":137.654618579,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":139.658860189,"data":"[NbConvertApp] Writing 1919037 bytes to __results__.html\n"}
+]

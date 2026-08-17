@@ -1,0 +1,13 @@
+target,target_vs_legacy_spearman,target_vs_b3_spearman
+ACL,1.0,1.0
+MCL,0.5,0.5
+Medial Meniscus,0.5,0.5
+Lateral Meniscus,1.0,0.5
+Medial OA,1.0,-0.5
+Lateral OA,1.0,-1.0
+PF OA,1.0,0.5
+Effusion,1.0,0.5
+Synovitis,1.0,1.0
+Baker's,1.0,1.0
+Contusion,1.0,1.0
+Fracture,1.0,1.0
