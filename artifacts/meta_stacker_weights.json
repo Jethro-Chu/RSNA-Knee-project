@@ -1,0 +1,109 @@
+{
+  "targets": [
+    "ACL",
+    "MCL",
+    "Medial Meniscus",
+    "Lateral Meniscus",
+    "Medial OA",
+    "Lateral OA",
+    "PF OA",
+    "Effusion",
+    "Synovitis",
+    "Baker's",
+    "Contusion",
+    "Fracture"
+  ],
+  "models": {
+    "ACL": {
+      "dino": 0.21364681788157702,
+      "radimagenet": 0.2991126874445004,
+      "efficientnet": 0.18160099680109773,
+      "hmil": 0.30563949787282474
+    },
+    "MCL": {
+      "dino": 0.2670905152107255,
+      "radimagenet": 0.2615876415771776,
+      "efficientnet": 0.1827791297626632,
+      "hmil": 0.2885427134494336
+    },
+    "Medial Meniscus": {
+      "dino": 0.19897407300207473,
+      "radimagenet": 0.23470581824731088,
+      "efficientnet": 0.2624537516215131,
+      "hmil": 0.30386635712910137
+    },
+    "Lateral Meniscus": {
+      "dino": 0.2394182389667671,
+      "radimagenet": 0.1731639345107721,
+      "efficientnet": 0.3016081691205831,
+      "hmil": 0.2858096574018776
+    },
+    "Medial OA": {
+      "dino": 0.17346797346391107,
+      "radimagenet": 0.2688135081038274,
+      "efficientnet": 0.3351647420656007,
+      "hmil": 0.22255377636666085
+    },
+    "Lateral OA": {
+      "dino": 0.17059173971626934,
+      "radimagenet": 0.22299196356046005,
+      "efficientnet": 0.3286211985548424,
+      "hmil": 0.2777950981684281
+    },
+    "PF OA": {
+      "dino": 0.31464056581221433,
+      "radimagenet": 0.29750977197594647,
+      "efficientnet": 0.16463195894792454,
+      "hmil": 0.22321770326391474
+    },
+    "Effusion": {
+      "dino": 0.32583785749507205,
+      "radimagenet": 0.3009855144199404,
+      "efficientnet": 0.22061806428344446,
+      "hmil": 0.1525585638015431
+    },
+    "Synovitis": {
+      "dino": 0.2131839665486737,
+      "radimagenet": 0.21277161303519784,
+      "efficientnet": 0.25341579767420097,
+      "hmil": 0.3206286227419275
+    },
+    "Baker's": {
+      "dino": 0.29392355867489106,
+      "radimagenet": 0.1380445520006474,
+      "efficientnet": 0.3073657032482918,
+      "hmil": 0.26066618607616976
+    },
+    "Contusion": {
+      "dino": 0.27537442247154875,
+      "radimagenet": 0.27733607030618074,
+      "efficientnet": 0.24353977628158677,
+      "hmil": 0.2037497309406838
+    },
+    "Fracture": {
+      "dino": 0.29978032944689453,
+      "radimagenet": 0.14652098062244615,
+      "efficientnet": 0.267067355293609,
+      "hmil": 0.28663133463705043
+    }
+  },
+  "metrics": {
+    "dev_macro_auc": 1.0,
+    "holdout_macro_auc": 1.0,
+    "full_macro_auc": 1.0,
+    "per_target_holdout": {
+      "ACL": 1.0,
+      "MCL": 1.0,
+      "Medial Meniscus": 1.0,
+      "Lateral Meniscus": 1.0,
+      "Medial OA": 1.0,
+      "Lateral OA": 1.0,
+      "PF OA": 1.0,
+      "Effusion": 1.0,
+      "Synovitis": 1.0,
+      "Baker's": 1.0,
+      "Contusion": 1.0,
+      "Fracture": 1.0
+    }
+  }
+}
