@@ -92,8 +92,6 @@ def main():
         val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=0)
 
         model = MultimodalHMILModel(
-            backbone_name=args.backbone,
-            pretrained=args.pretrained,
             num_targets=len(TARGET_NAMES),
             meta_dim=16,
             feature_dim=128,
