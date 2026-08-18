@@ -1,0 +1,66 @@
+[{"stream_name":"stderr","time":6.409102509,"data":"/usr/local/lib/python3.12/dist-packages/nbformat/__init__.py:96: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":6.40916731,"data":"  validate(nb)\n"}
+,{"stream_name":"stderr","time":7.252610697,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.252651606,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.252657028,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.252660821,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.862618267,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.862643129,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.862649992,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.86265258,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":15.408341481,"data":"[    0.2s] memory: 29.8 GB available, 13.4 GB to the cache; sizing for 4407 train + 1322 test studies -\u003e 1 group(s) of 3 = 3 slices per slot\n"}
+,{"stream_name":"stderr","time":18.444425549,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":18.444453536,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":18.444460034,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":18.444602784,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":18.444625521,"data":"  File \"/usr/local/lib/python3.12/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":18.444845167,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":18.445130215,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":18.445144696,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":18.445153103,"data":"Exception encountered at \"In [1]\":\n"}
+,{"stream_name":"stderr","time":18.445174493,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":18.445179465,"data":"FileNotFoundError                         Traceback (most recent call last)\n"}
+,{"stream_name":"stderr","time":18.44518455,"data":"/tmp/ipykernel_23/2280177673.py in \u003ccell line: 0\u003e()\n"}
+,{"stream_name":"stderr","time":18.445189827,"data":"    856         if candidate.is_file():\n"}
+,{"stream_name":"stderr","time":18.445194192,"data":"    857             candidate.unlink()\n"}
+,{"stream_name":"stderr","time":18.445198501,"data":"--\u003e 858 run_dinov2()\n"}
+,{"stream_name":"stderr","time":18.445202715,"data":"\n"}
+,{"stream_name":"stderr","time":18.445206818,"data":"/tmp/ipykernel_23/2280177673.py in run_dinov2()\n"}
+,{"stream_name":"stderr","time":18.445211073,"data":"    847 def run_dinov2():\n"}
+,{"stream_name":"stderr","time":18.445227488,"data":"    848     path = ASSET / 'rsna-knee-weights'\n"}
+,{"stream_name":"stderr","time":18.445231085,"data":"--\u003e 849     infer_from_package(path, DEVS[0])\n"}
+,{"stream_name":"stderr","time":18.44523445,"data":"    850     public = Path('/kaggle/working/submission_public_0899.csv')\n"}
+,{"stream_name":"stderr","time":18.445237777,"data":"    851     if not public.is_file():\n"}
+,{"stream_name":"stderr","time":18.44524106,"data":"\n"}
+,{"stream_name":"stderr","time":18.445245892,"data":"/tmp/ipykernel_23/2280177673.py in infer_from_package(path, dev)\n"}
+,{"stream_name":"stderr","time":18.445252249,"data":"    685 \n"}
+,{"stream_name":"stderr","time":18.445255341,"data":"    686 def infer_from_package(path, dev=None):\n"}
+,{"stream_name":"stderr","time":18.445269589,"data":"--\u003e 687     man = json.loads((Path(path) / 'manifest.json').read_text())\n"}
+,{"stream_name":"stderr","time":18.44527387,"data":"    688     members = man['members']\n"}
+,{"stream_name":"stderr","time":18.445277982,"data":"    689     log(f'weights package: {len(members)} member(s) from {path}; {len(DEVS)} device(s)')\n"}
+,{"stream_name":"stderr","time":18.44528221,"data":"\n"}
+,{"stream_name":"stderr","time":18.445285953,"data":"/usr/lib/python3.12/pathlib.py in read_text(self, encoding, errors)\n"}
+,{"stream_name":"stderr","time":18.445289535,"data":"   1025         \"\"\"\n"}
+,{"stream_name":"stderr","time":18.445292943,"data":"   1026         encoding = io.text_encoding(encoding)\n"}
+,{"stream_name":"stderr","time":18.445296336,"data":"-\u003e 1027         with self.open(mode='r', encoding=encoding, errors=errors) as f:\n"}
+,{"stream_name":"stderr","time":18.445299898000002,"data":"   1028             return f.read()\n"}
+,{"stream_name":"stderr","time":18.445303111,"data":"   1029 \n"}
+,{"stream_name":"stderr","time":18.445306325,"data":"\n"}
+,{"stream_name":"stderr","time":18.445309436,"data":"/usr/lib/python3.12/pathlib.py in open(self, mode, buffering, encoding, errors, newline)\n"}
+,{"stream_name":"stderr","time":18.445312897,"data":"   1011         if \"b\" not in mode:\n"}
+,{"stream_name":"stderr","time":18.445316317,"data":"   1012             encoding = io.text_encoding(encoding)\n"}
+,{"stream_name":"stderr","time":18.445319697,"data":"-\u003e 1013         return io.open(self, mode, buffering, encoding, errors, newline)\n"}
+,{"stream_name":"stderr","time":18.445323203,"data":"   1014 \n"}
+,{"stream_name":"stderr","time":18.445326378,"data":"   1015     def read_bytes(self):\n"}
+,{"stream_name":"stderr","time":18.445329605,"data":"\n"}
+,{"stream_name":"stderr","time":18.445332755,"data":"FileNotFoundError: [Errno 2] No such file or directory: '/kaggle/input/datasets/tonylica/rsna-knee-bend-dinov3-0917-repro-assets/rsna-knee-weights/manifest.json'\n"}
+,{"stream_name":"stderr","time":18.445336938,"data":"\n"}
+,{"stream_name":"stderr","time":20.501234979,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":20.501268791,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":20.653652378,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":20.653680495,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":21.390714901,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":21.685894163,"data":"[NbConvertApp] Writing 125492 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":24.041681569,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":25.335128179,"data":"[NbConvertApp] Writing 894140 bytes to __results__.html\n"}
+]
