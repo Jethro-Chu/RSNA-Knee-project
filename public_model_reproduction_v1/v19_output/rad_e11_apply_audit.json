@@ -1,0 +1,11 @@
+{
+  "alpha": 0.2,
+  "fallback_sha256": "2f9358d59c1a8df8266dc0b5e63536c19457e2c4fd5db1a4c3d6c1cc2b238200",
+  "gate": "25/25 grouped held-out folds; clean report-only reference; interior optimum",
+  "heads": 5,
+  "heads_sha256": "df98518d0a8f7cc506b4b806da03c3fca18c8f8f743e813c5401759b45e0f1fe",
+  "selected_sha256": "b66458458a1df94be56e92e25d8b801200d4cdd87732586daf3470745acec849",
+  "status": "E11_APPLIED",
+  "test_studies": 3,
+  "tokens": 56
+}
