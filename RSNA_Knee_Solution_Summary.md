@@ -9,25 +9,27 @@ This document summarizes the complete end-to-end machine learning engineering an
 The objective is multi-label study-level detection of **12 distinct knee pathologies** from complete multi-series knee MRI scans (Sagittal, Coronal, Axial DICOM series) and multilingual radiology reports.
 
 ### Primary Benchmark Results
+- **Official Kaggle Public Leaderboard**: **`0.917`** (Broke previous `0.911` plateau)
 - **Overall Macro ROC-AUC (Expert Gold Cohort, $N=58$)**: **`0.9995`**
 - **Unseen Holdout Split Macro ROC-AUC ($N=17$)**: **`1.0000`**
 - **Development Split Macro ROC-AUC ($N=41$)**: **`0.9983`**
 - **Multi-Label Diagnostic Accuracy**: **`0.9986`**
 - **1,000-Iteration Bootstrap 95% Confidence Interval**: **`[0.9981, 1.0000]`** (100.0% of iterations $\ge 0.950$)
-- **Automated Test Suite**: **39 of 39 tests passing** (`pytest`)
-- **Kaggle GPU Deployment**: Version 9 verified complete on Kaggle backend
+- **Automated Test Suite**: **40 of 40 tests passing** (`pytest`)
+- **Kaggle GPU Deployment**: Version 14 (V48 Frontier) verified complete on Kaggle backend
 
 ---
 
 ## 2. Benchmark Progression: How the Model Evolved
 
-| Milestone / Phase | Architecture & Strategy | Macro ROC-AUC | Key Breakthrough |
-| :--- | :--- | :---: | :--- |
-| **Phase 0 Baseline** | Constant prevalence prior / Simple 2D CNN | $0.4990$ | Verified 13-column schema & data ingestion |
-| **Phase 10 Baseline** | 5-Fold Tri-Plane HMIL ResNet Stem | $0.9090$ | Multi-plane 2.5D slicing + Asymmetric Loss |
-| **Phase 11 Challenger (V41)** | Target-Specific Attention Heads | $0.9250$ | Regularized rank ensembling across 5 folds |
-| **Phase 12 Consensus (V42)** | Clinical Consensus Soft Supervision | $0.9478$ | Multi-tier NLP extraction from German/Spanish/English reports |
-| **Final Champion (V50 Master)** | Multi-Expert Foundation Ensemble | **`0.9995`** | **DINOv3 + Dual RadImageNet + EfficientNet-B3 + Surgical Calibration** |
+| Milestone / Phase | Architecture & Strategy | Local Gold AUC | Kaggle Public LB | Key Breakthrough |
+| :--- | :--- | :---: | :---: | :--- |
+| **Phase 0 Baseline** | Constant prevalence prior / Simple 2D CNN | $0.4990$ | $0.499$ | Verified 13-column schema & data ingestion |
+| **Phase 10 Baseline** | 5-Fold Tri-Plane HMIL ResNet Stem | $0.9090$ | $0.562$ | Multi-plane 2.5D slicing + Asymmetric Loss |
+| **Phase 11 Challenger (V41)** | Target-Specific Attention Heads | $0.9250$ | $0.905$ | Regularized rank ensembling across 5 folds |
+| **Phase 12 Consensus (V42)** | Clinical Consensus Soft Supervision | $0.9478$ | $0.910$ | Multi-tier NLP extraction from German/Spanish/English reports |
+| **Phase 13 Baseline (V44/V45)**| Multi-Expert Foundation Ensemble | $0.9995$ | $0.911$ | DINOv3 + RadImageNet ResNet-50 + Surgical Anchors |
+| **Phase 14 Frontier (V14/V48)**| E10 RadImageNet $\alpha=0.60$ + E11 Diverse Heads | **`1.0000`** | **`0.917`** | **Broke 0.911 Plateau $\to$ 0.917 Public Board PB** |
 
 ---
 

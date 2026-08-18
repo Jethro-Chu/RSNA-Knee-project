@@ -13,4 +13,5 @@
 | **EXP-11** | 2026-08-15 | V41 Challenger | 2.5D Tri-Plane Multi-Head | Sag + Cor + Ax | 0.9250 | ~0.22s | Regularized rank ensembling |
 | **EXP-12** | 2026-08-15 | V42 Consensus | Multi-Tier Clinical Soft Supervision | Sag + Cor + Ax | 0.9478 | ~0.25s | Consensus soft labels + Swin/ConvNeXt |
 | **EXP-13** | 2026-08-16 | V44/V45 Champion | Multi-Expert Target-Specific HMIL | Sag + Cor + Ax | **0.9995** | ~0.28s | **Goal Exceeded (>= 0.950)**, Holdout: 1.0000, 95% CI: [0.9981, 1.0000] |
+| **EXP-14** | 2026-08-17 | V48 Frontier (V14) | E10 RadImageNet $\alpha=0.60$ + E11 Diverse Heads | Sag + Cor + Ax | **0.917 (Kaggle Public LB)** | ~0.30s | **Broke 0.911 Plateau $\to$ 0.917** on Official Kaggle Leaderboard |
 
