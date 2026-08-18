@@ -1,0 +1,13 @@
+{
+  "correction": "E10 RadImageNet uniform 0.60; Baker and Fracture preserved",
+  "dynamic_test_ids_exact": true,
+  "e10_contract_sha256": "219c91f40905181c222e2966b3fed01a96570ddfb64862357d5fd6cad500cd45",
+  "e10_heads_sha256": "0f465649799ecfbccaac1767844639e7ced44e1bc9babde6e4bac7c5d9b89eaa",
+  "finite_in_range": true,
+  "parent": "DINOv2 rank ensemble plus cross-series DINOv3",
+  "parent_sha256": "6df051512d8d03743002caa03a476437ee6be55b01ab3a2dea2663e0fce0356d",
+  "schema_exact": true,
+  "status": "VALID_DINOV3_E10_HYBRID_ALPHA050",
+  "submission_sha256": "92fea5d8d4fa103c1829faa33502afbb81b2709759ef62d09e526e59b4f889ca",
+  "test_studies": 3
+}
