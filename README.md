@@ -4,6 +4,7 @@
 [![PyTorch 2.1+](https://img.shields.io/badge/PyTorch-2.1+-ee4c2c.svg)](https://pytorch.org/)
 [![Kaggle Competition](https://img.shields.io/badge/Kaggle-RSNA%20Knee%20Abnormality-20BEFF.svg)](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection)
 [![Test Suite](https://img.shields.io/badge/tests-39%20passed-brightgreen.svg)]()
+[![Kaggle Public LB](https://img.shields.io/badge/Kaggle%20Public%20LB-0.917-blue.svg)]()
 
 A competitive, reproducible, and modular machine learning solution for the **RSNA Knee Abnormality Detection** challenge on Kaggle.
 
@@ -47,23 +48,37 @@ Our solution utilizes a **Multimodal Tri-Plane Hierarchical Multiple-Instance Le
 
 ## 2. Validation & Benchmark Results
 
-Evaluated across all 12 official competition target pathologies using study-level stratified 5-fold cross-validation and verified on the expert human radiologist ground truth holdout set ($N=58$):
+### 2a. Verified Kaggle Leaderboard Score (ground truth)
 
-| Target Pathology | Primary MRI Series | Out-of-Fold Val ROC-AUC | Multi-Label Accuracy | Clinical Note |
+The only score that has actually been graded against Kaggle's hidden test set. Pulled directly from `kaggle competitions submissions` on 2026-08-17:
+
+| Metric | Value |
+| :--- | :---: |
+| **Public Leaderboard Macro ROC-AUC** (best submission, "V48 Frontier") | **`0.917`** |
+| Leaderboard Rank | 130 / 1832 teams |
+| Submission history | 0.499 → 0.562 → 0.90–0.911 → **0.917** |
+
+### 2b. Internal Offline Validation (NOT leaderboard-verified — read before trusting)
+
+The table below reports performance against the repo's internal **58-study "expert gold" holdout** — the only slice of `train.csv` with real (non-pseudo) labels. Several targets show scores of exactly 1.0000, and the macro average (0.9995) is dramatically higher than the actual Kaggle public score (0.917) obtained on the same underlying models. This gap is a strong signal of overfitting/leakage to the tiny 58-sample set (e.g. via calibration or ensembling tuned directly against it), **not** evidence the model is near-perfect. Treat these numbers as an internal diagnostic only, not as a performance claim:
+
+| Target Pathology | Primary MRI Series | Internal Holdout ROC-AUC ($N=58$) | Multi-Label Accuracy | Clinical Note |
 | :--- | :--- | :---: | :---: | :--- |
-| **ACL Tear** | Sagittal | **1.0000** | **1.0000** | Trajectory discontinuity & fiber laxity |
-| **MCL Tear** | Coronal | **1.0000** | **1.0000** | Medial collateral ligament disruption |
-| **Medial Meniscus** | Sagittal / Coronal | **1.0000** | **1.0000** | Posterior horn & body tears |
-| **Lateral Meniscus** | Sagittal / Coronal | **1.0000** | **1.0000** | Anterior/posterior horn tears |
-| **Medial OA** | Coronal / Sagittal | **1.0000** | **1.0000** | Medial compartment joint space narrowing |
-| **Lateral OA** | Coronal | **1.0000** | **1.0000** | Lateral compartment chondromalacia |
-| **PF Osteoarthritis** | Axial / Sagittal | **1.0000** | **1.0000** | Patellofemoral joint cartilage loss |
-| **Effusion** | Axial / Sagittal | **1.0000** | **1.0000** | Fluid-sensitive hyperintensity |
-| **Synovitis** | Axial / Sagittal | **1.0000** | **1.0000** | Synovial hypertrophy & pannus |
-| **Baker's Cyst** | Axial / Sagittal | **0.9946** | **0.9828** | Gastrocnemius-semimembranosus distension |
-| **Bone Contusion** | Coronal / Sagittal | **1.0000** | **1.0000** | Trabecular microfracture edema pattern |
-| **Fracture** | Sagittal / Coronal | **1.0000** | **1.0000** | Cortical bone disruption & impaction |
-| **OVERALL MACRO ROC-AUC** | **Unweighted Mean** | **`0.9995`** | **`0.9986`** | **Exceeds >= 0.950 Goal Benchmark** |
+| **ACL Tear** | Sagittal | 1.0000 | 1.0000 | Trajectory discontinuity & fiber laxity |
+| **MCL Tear** | Coronal | 1.0000 | 1.0000 | Medial collateral ligament disruption |
+| **Medial Meniscus** | Sagittal / Coronal | 1.0000 | 1.0000 | Posterior horn & body tears |
+| **Lateral Meniscus** | Sagittal / Coronal | 1.0000 | 1.0000 | Anterior/posterior horn tears |
+| **Medial OA** | Coronal / Sagittal | 1.0000 | 1.0000 | Medial compartment joint space narrowing |
+| **Lateral OA** | Coronal | 1.0000 | 1.0000 | Lateral compartment chondromalacia |
+| **PF Osteoarthritis** | Axial / Sagittal | 1.0000 | 1.0000 | Patellofemoral joint cartilage loss |
+| **Effusion** | Axial / Sagittal | 1.0000 | 1.0000 | Fluid-sensitive hyperintensity |
+| **Synovitis** | Axial / Sagittal | 1.0000 | 1.0000 | Synovial hypertrophy & pannus |
+| **Baker's Cyst** | Axial / Sagittal | 0.9946 | 0.9828 | Gastrocnemius-semimembranosus distension |
+| **Bone Contusion** | Coronal / Sagittal | 1.0000 | 1.0000 | Trabecular microfracture edema pattern |
+| **Fracture** | Sagittal / Coronal | 1.0000 | 1.0000 | Cortical bone disruption & impaction |
+| **Internal Macro ROC-AUC** | **Unweighted Mean** | 0.9995 | 0.9986 | **Not corroborated by the leaderboard — see 2a** |
+
+**Bottom line: cite `0.917` (public leaderboard) as the solution's performance. Do not cite `0.9995`.**
 
 
 ---

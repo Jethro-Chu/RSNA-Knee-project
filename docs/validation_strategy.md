@@ -8,10 +8,10 @@
 
 ## 2. Dual Validation Views
 
-### View A: Gold-Standard Expert Validation (Primary Truth)
+### View A: Gold-Standard Expert Validation (internal diagnostic only)
 - Evaluated strictly on the ~58 ground-truth annotated cases.
 - Computes unweighted macro-average ROC-AUC across all 12 target classes.
-- Serves as the primary validation proxy for competition leaderboard ranking.
+- **Caution**: in practice this view has *not* tracked the real Kaggle public leaderboard score — internal runs have scored up to 0.9995 here while the same models scored only 0.917 on Kaggle's actual public leaderboard (see `docs/experiment_log.md`). With only 58 samples, and given that calibration/ensembling decisions have been tuned by looking at this same set, treat it as overfit-prone rather than as a reliable leaderboard proxy. The Kaggle public leaderboard score is the only trustworthy performance number.
 
 ### View B: Pseudo-Label Validation (Secondary Signal)
 - Evaluated on high-confidence pseudo-labeled studies extracted from report text.

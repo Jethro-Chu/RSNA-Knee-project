@@ -65,11 +65,12 @@
 
 ## 4. Kaggle Infrastructure & Deployment Log
 
-- **Kaggle Account**: `chujethro`
+- **Kaggle Account (teammate)**: `chujethro`
 - **Team Shared Notebook**: [`wenwen12/rsna-knee`](https://www.kaggle.com/code/wenwen12/rsna-knee)
 - **Personal Notebook**: [`chujethro/rsna-knee`](https://www.kaggle.com/code/chujethro/rsna-knee)
 - **GPU Training Notebook**: [`chujethro/rsna-knee-training`](https://www.kaggle.com/code/chujethro/rsna-knee-training)
 - **Checkpoints Dataset**: [`chujethro/rsna-knee-checkpoints`](https://www.kaggle.com/datasets/chujethro/rsna-knee-checkpoints)
+- **Kaggle Account (this machine)**: `rishibhargava22` — teammate account authenticated locally via the Kaggle API/CLI (`~/.kaggle/access_token`), used for submission history checks and the full dataset download in `data/`. This is the account of record for verified scores in §6 below.
 
 ### Deployment Versions Summary:
 - **Version 1–3**: Pulled and audited original 1-cell starter template.
@@ -90,13 +91,17 @@
 
 ---
 
-## 6. Analysis of Initial Submission (Score: 0.499) & Next Step
+## 6. Submission History & Current Status (updated 2026-08-17)
 
-### Root Cause of 0.499:
+### Root Cause of the initial 0.499:
 - In ROC-AUC evaluation, **0.499 / 0.500** represents a constant prediction or untrained model baseline.
 - `model_fold_4_best.pt` was an architectural initialization checkpoint saved before executing full multi-epoch gradient descent on the 500 GB DICOM volume data.
 
-### Concrete Next Step to Reach 0.90+ Leaderboard:
-1. Run multi-epoch training on Kaggle GPU T4 x2 using `01_kaggle_train.ipynb` / `train.py` across all 4,407 studies.
-2. Optimize with `AsymmetricLoss` ($\gamma_-=4.0, \gamma_+=0.5$) using cosine learning rate annealing.
-3. Save the trained 5-fold checkpoints, attach to `rsna-knee.ipynb`, and submit to produce genuine, high-ranking discriminating predictions.
+### Verified progress since then (pulled from `kaggle competitions submissions`, account `rishibhargava22`):
+0.499 → 0.562 → 0.905–0.911 (several intermediate submissions) → **0.917 (best, "V48 Frontier", 2026-08-17)**, currently ranked **130 / 1832 teams**.
+
+**Note**: other docs in this repo (e.g. §4 above, `RSNA_Knee_Solution_Summary.md`) reference a `chujethro` Kaggle account/notebooks — this is a teammate's account, part of the same team as `rishibhargava22` (this machine's authenticated account). Both accounts' submissions count toward the shared team leaderboard entry; `0.917` (rank 130/1832) is the team's verified best score. The `0.9995` figure quoted elsewhere is an internal 58-sample holdout metric, not the leaderboard, and should not be quoted as competition performance.
+
+### Next step to improve beyond 0.917:
+1. Use the newly downloaded full dataset (`data/`, 570GB via Kaggle API) to iterate further rather than relying on the 58-sample internal holdout for decisions.
+2. Any future internal validation claims should be cross-checked against an actual Kaggle submission before being written into docs.

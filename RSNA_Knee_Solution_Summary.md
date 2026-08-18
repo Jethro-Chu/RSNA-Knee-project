@@ -9,13 +9,16 @@ This document summarizes the complete end-to-end machine learning engineering an
 The objective is multi-label study-level detection of **12 distinct knee pathologies** from complete multi-series knee MRI scans (Sagittal, Coronal, Axial DICOM series) and multilingual radiology reports.
 
 ### Primary Benchmark Results
-- **Overall Macro ROC-AUC (Expert Gold Cohort, $N=58$)**: **`0.9995`**
-- **Unseen Holdout Split Macro ROC-AUC ($N=17$)**: **`1.0000`**
-- **Development Split Macro ROC-AUC ($N=41$)**: **`0.9983`**
-- **Multi-Label Diagnostic Accuracy**: **`0.9986`**
-- **1,000-Iteration Bootstrap 95% Confidence Interval**: **`[0.9981, 1.0000]`** (100.0% of iterations $\ge 0.950$)
+- **Verified Kaggle Public Leaderboard Macro ROC-AUC (ground truth)**: **`0.917`** (best submission "V48 Frontier", 2026-08-17; rank 130/1832 teams)
 - **Automated Test Suite**: **39 of 39 tests passing** (`pytest`)
-- **Kaggle GPU Deployment**: Version 9 verified complete on Kaggle backend
+- **Kaggle GPU Deployment**: Version 14 is the highest-scoring deployed submission on the Kaggle backend
+
+### Internal Offline Diagnostic (not leaderboard-verified)
+- **Overall Macro ROC-AUC (Expert Gold Cohort, $N=58$)**: `0.9995` — computed against the same tiny 58-study holdout used for calibration/ensembling decisions, so it is **not an independent estimate** and should not be quoted as the model's real-world performance. The ~8 point gap versus the actual `0.917` leaderboard score indicates this holdout is overfit, not that the model is near-perfect.
+- **Unseen Holdout Split Macro ROC-AUC ($N=17$)**: `1.0000` (same caveat — 17 samples, not leaderboard data)
+- **Development Split Macro ROC-AUC ($N=41$)**: `0.9983` (same caveat)
+- **Multi-Label Diagnostic Accuracy (internal, $N=58$)**: `0.9986` (same caveat)
+- **1,000-Iteration Bootstrap 95% CI (internal, $N=58$)**: `[0.9981, 1.0000]` — a tight CI here reflects the small, likely-leaked sample, not true model uncertainty.
 
 ---
 
@@ -27,7 +30,10 @@ The objective is multi-label study-level detection of **12 distinct knee patholo
 | **Phase 10 Baseline** | 5-Fold Tri-Plane HMIL ResNet Stem | $0.9090$ | Multi-plane 2.5D slicing + Asymmetric Loss |
 | **Phase 11 Challenger (V41)** | Target-Specific Attention Heads | $0.9250$ | Regularized rank ensembling across 5 folds |
 | **Phase 12 Consensus (V42)** | Clinical Consensus Soft Supervision | $0.9478$ | Multi-tier NLP extraction from German/Spanish/English reports |
-| **Final Champion (V50 Master)** | Multi-Expert Foundation Ensemble | **`0.9995`** | **DINOv3 + Dual RadImageNet + EfficientNet-B3 + Surgical Calibration** |
+| **Final Champion (V50 Master, internal)** | Multi-Expert Foundation Ensemble | `0.9995`* | **DINOv3 + Dual RadImageNet + EfficientNet-B3 + Surgical Calibration** |
+| **Best Verified Submission (V48 Frontier)** | Multi-Expert Ensemble, E10 Alpha 0.60 | **`0.917`** (Kaggle public LB) | **The only score confirmed against Kaggle's hidden test set** |
+
+\* V50's `0.9995` is an internal 58-sample holdout score, not a leaderboard result — see Section 1.
 
 ---
 
@@ -86,7 +92,7 @@ The objective is multi-label study-level detection of **12 distinct knee patholo
 
 ## 4. Target-by-Target Performance Breakdown
 
-Evaluated on the expert human radiologist ground truth benchmark ($N=58$):
+**Caveat**: this breakdown is computed on the internal 58-study expert holdout only, not against Kaggle's hidden test set. Given the 8-point gap to the real leaderboard score (0.917, Section 1), treat per-target numbers below as directional/diagnostic rather than accurate estimates of real per-target performance:
 
 | Target Pathology | Primary MRI Series | ROC-AUC | Multi-Label Accuracy | Positive Support | Negative Support | Clinical Significance |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -102,15 +108,17 @@ Evaluated on the expert human radiologist ground truth benchmark ($N=58$):
 | **Baker's Cyst** | Axial / Sagittal | **`0.9946`** | **`0.9828`** | 12 | 46 | Popliteal bursa distension |
 | **Bone Contusion** | Coronal / Sagittal | **`1.0000`** | **`1.0000`** | 19 | 39 | Trabecular bone bruise pattern |
 | **Fracture** | Sagittal / Coronal | **`1.0000`** | **`1.0000`** | 18 | 40 | Cortical disruption & impaction |
-| **OVERALL MACRO** | **Unweighted Mean** | **`0.9995`** | **`0.9986`** | **239** | **457** | **Verified Top-Tier Benchmark** |
+| **INTERNAL MACRO** | **Unweighted Mean** | `0.9995` | `0.9986` | **239** | **457** | **Internal-only; real LB score is 0.917 (Section 1)** |
 
 ---
 
 ## 5. Kaggle Deployment & Verification
 
-- **Kaggle Kernel**: [`chujethro/rsna-knee`](https://www.kaggle.com/code/chujethro/rsna-knee) (Version 9)
+- **Kaggle Kernel**: [`chujethro/rsna-knee`](https://www.kaggle.com/code/chujethro/rsna-knee) (Version 9) — `chujethro` is a teammate's account on the same team.
+- **Kaggle Account (this machine)**: `rishibhargava22`, authenticated locally via the Kaggle API/CLI; used to pull verified submission history below.
+- **Best verified submission**: "Version 14: V48 Frontier (E10 Alpha 0.60 + Diverse RadImageNet)", submitted 2026-08-17 21:13 UTC by `rishibhargava22`, public LB score `0.917` — this is the team's current best.
 - **Execution Mode**: GPU T4, internet disabled, offline compliant
-- **Verified Output File**: `submission.csv` (SHA-256: `53cab8b0f82eab2e0701541c96ae94c5dad600e7d704a3a5d7b0bf5db1526012`)
+- **Verified Output File**: `submission.csv` — the SHA-256 below has not been re-verified against the current best submission and should be treated as unconfirmed: `53cab8b0f82eab2e0701541c96ae94c5dad600e7d704a3a5d7b0bf5db1526012`
 - **Sanity Checks**: Zero missing values, exact 13-column schema, probability bounds strictly in $[0.0, 1.0]$.
 
 ---
