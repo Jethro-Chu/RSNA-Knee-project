@@ -1,0 +1,69 @@
+{
+  "available_at_start_seconds": 31294.619278192524,
+  "configuration": "per_target_nested",
+  "contract_sha256": "219c91f40905181c222e2966b3fed01a96570ddfb64862357d5fd6cad500cd45",
+  "elapsed_before_e10_seconds": 97.38072180747986,
+  "encoder": "RadImageNet ResNet-50 official PyTorch release",
+  "encoder_license": "CC-BY-NC-SA-4.0",
+  "evidence_boundary": "OOF values are 58-study diagnostics on official train labels, not Kaggle scores. E10 widens the weight ladder that E9 truncated at 0.25 and votes only where two independent OOF runs agree at the deployed weight.",
+  "experiment": "E10",
+  "fallback_sha256": "6df051512d8d03743002caa03a476437ee6be55b01ab3a2dea2663e0fce0356d",
+  "heads_sha256": "0f465649799ecfbccaac1767844639e7ced44e1bc9babde6e4bac7c5d9b89eaa",
+  "ladder_sha256": {
+    "per_target_nested": "be63d2ef5ee6777ffe2099d4674d8b4986569356d8fe5a9a7f30a38a69ed96f9",
+    "uniform_020": "1b7296a74088434c1bec71d05e776a08dbc54684a56c1e7a4093da701ecc5b47",
+    "uniform_035": "07c585567683e8af842306306a9870e68205b4a1bb3191703cd4e5cc149a297d",
+    "uniform_050": "2f9358d59c1a8df8266dc0b5e63536c19457e2c4fd5db1a4c3d6c1cc2b238200",
+    "uniform_060": "b6d7a684fed73b836ce3d5a0372e0413502442f21b0a113ce2062076b1dd82cb",
+    "uniform_070": "c086226789df97c568e64606adfaa52e1fd688addbd028fd723607650112fbe5"
+  },
+  "mode": "pinned_v15_heads_inference_only",
+  "parent": "E2 captured 20-member DINOv2 rank ensemble",
+  "pixel_rules": {
+    "decode_fill": "zero",
+    "lat": "corner_x",
+    "order": "dominant_axis",
+    "slot_fallback": true
+  },
+  "primary_sha256": "be63d2ef5ee6777ffe2099d4674d8b4986569356d8fe5a9a7f30a38a69ed96f9",
+  "rad_block": "pinned_v15 + E13 averaged (ranks)",
+  "selected_path": "/kaggle/working/rsna_rad_e10/submission_e10_per_target_nested.csv",
+  "selected_sha256": "be63d2ef5ee6777ffe2099d4674d8b4986569356d8fe5a9a7f30a38a69ed96f9",
+  "status": "CANDIDATE_SELECTED",
+  "test_available_slice_tokens": 64,
+  "test_head_count": 5,
+  "test_studies": 3,
+  "weight_gate": {
+    "all_dual_positive": true,
+    "alpha_map": {
+      "ACL": 0.7,
+      "Baker's": 0.0,
+      "Contusion": 0.7,
+      "Effusion": 0.6,
+      "Fracture": 0.0,
+      "Lateral Meniscus": 0.7,
+      "Lateral OA": 0.7,
+      "MCL": 0.6,
+      "Medial Meniscus": 0.35,
+      "Medial OA": 0.7,
+      "PF OA": 0.7,
+      "Synovitis": 0.7
+    },
+    "base_gold_macro_auc": 0.8400089312435326,
+    "configuration": "per_target_nested",
+    "diagnostic_macro": {
+      "public": 0.8572444665805178,
+      "remote_v15": 0.8670930802762493
+    },
+    "preserved_targets": [
+      "Baker's",
+      "Fracture"
+    ],
+    "rationale": "Per target, the largest ladder weight positive in both independent OOF runs. Reported macro is the honest grouped-fold nested estimate, not the descriptive optimum.",
+    "recomputed_macro": {
+      "public": 0.8640448652596365,
+      "remote_v15": 0.8740990730056851
+    },
+    "remote_ladder_recomputed_in_kernel": true
+  }
+}
