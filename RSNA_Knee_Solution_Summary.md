@@ -9,9 +9,9 @@ This document summarizes the complete end-to-end machine learning engineering an
 The objective is multi-label study-level detection of **12 distinct knee pathologies** from complete multi-series knee MRI scans (Sagittal, Coronal, Axial DICOM series) and multilingual radiology reports.
 
 ### Primary Benchmark Results
-- **Verified Kaggle Public Leaderboard Macro ROC-AUC (ground truth)**: **`0.917`** (best submission "V48 Frontier", 2026-08-17; rank 130/1832 teams)
-- **Automated Test Suite**: **39 of 39 tests passing** (`pytest`)
-- **Kaggle GPU Deployment**: Version 14 is the highest-scoring deployed submission on the Kaggle backend
+- **Verified Kaggle Public Leaderboard Macro ROC-AUC (ground truth)**: **`0.917`** (best submission "V48 Frontier", Version 14, 2026-08-17; rank 130/1832 teams; broke previous 0.911 plateau)
+- **Automated Test Suite**: **40 of 40 tests passing** (`pytest`)
+- **Kaggle GPU Deployment**: Version 14 (V48 Frontier) verified complete on Kaggle backend — the highest-scoring deployed submission
 
 ### Internal Offline Diagnostic (not leaderboard-verified)
 - **Overall Macro ROC-AUC (Expert Gold Cohort, $N=58$)**: `0.9995` — computed against the same tiny 58-study holdout used for calibration/ensembling decisions, so it is **not an independent estimate** and should not be quoted as the model's real-world performance. The ~8 point gap versus the actual `0.917` leaderboard score indicates this holdout is overfit, not that the model is near-perfect.
@@ -24,16 +24,16 @@ The objective is multi-label study-level detection of **12 distinct knee patholo
 
 ## 2. Benchmark Progression: How the Model Evolved
 
-| Milestone / Phase | Architecture & Strategy | Macro ROC-AUC | Key Breakthrough |
-| :--- | :--- | :---: | :--- |
-| **Phase 0 Baseline** | Constant prevalence prior / Simple 2D CNN | $0.4990$ | Verified 13-column schema & data ingestion |
-| **Phase 10 Baseline** | 5-Fold Tri-Plane HMIL ResNet Stem | $0.9090$ | Multi-plane 2.5D slicing + Asymmetric Loss |
-| **Phase 11 Challenger (V41)** | Target-Specific Attention Heads | $0.9250$ | Regularized rank ensembling across 5 folds |
-| **Phase 12 Consensus (V42)** | Clinical Consensus Soft Supervision | $0.9478$ | Multi-tier NLP extraction from German/Spanish/English reports |
-| **Final Champion (V50 Master, internal)** | Multi-Expert Foundation Ensemble | `0.9995`* | **DINOv3 + Dual RadImageNet + EfficientNet-B3 + Surgical Calibration** |
-| **Best Verified Submission (V48 Frontier)** | Multi-Expert Ensemble, E10 Alpha 0.60 | **`0.917`** (Kaggle public LB) | **The only score confirmed against Kaggle's hidden test set** |
+| Milestone / Phase | Architecture & Strategy | Local Gold AUC ($N=58$, internal) | Kaggle Public LB (verified) | Key Breakthrough |
+| :--- | :--- | :---: | :---: | :--- |
+| **Phase 0 Baseline** | Constant prevalence prior / Simple 2D CNN | $0.4990$ | $0.499$ | Verified 13-column schema & data ingestion |
+| **Phase 10 Baseline** | 5-Fold Tri-Plane HMIL ResNet Stem | $0.9090$ | $0.562$ | Multi-plane 2.5D slicing + Asymmetric Loss |
+| **Phase 11 Challenger (V41)** | Target-Specific Attention Heads | $0.9250$ | $0.905$ | Regularized rank ensembling across 5 folds |
+| **Phase 12 Consensus (V42)** | Clinical Consensus Soft Supervision | $0.9478$ | $0.910$ | Multi-tier NLP extraction from German/Spanish/English reports |
+| **Phase 13 Baseline (V44/V45)**| Multi-Expert Foundation Ensemble | $0.9995$ | $0.911$ | DINOv3 + RadImageNet ResNet-50 + Surgical Anchors |
+| **Phase 14 Frontier (V14/V48)**| E10 RadImageNet $\alpha=0.60$ + E11 Diverse Heads | $1.0000$ | **`0.917`** | **Broke 0.911 Plateau $\to$ 0.917 Public Board PB** |
 
-\* V50's `0.9995` is an internal 58-sample holdout score, not a leaderboard result — see Section 1.
+Note the widening gap between "Local Gold AUC" and "Kaggle Public LB" from Phase 10 onward — later phases increasingly overfit the 58-sample internal holdout (reaching 1.0000) while real leaderboard gains were far more modest (0.562 → 0.917). Use the Kaggle Public LB column, not Local Gold AUC, to judge actual progress.
 
 ---
 

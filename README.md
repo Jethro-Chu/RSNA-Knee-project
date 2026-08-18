@@ -3,10 +3,12 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch 2.1+](https://img.shields.io/badge/PyTorch-2.1+-ee4c2c.svg)](https://pytorch.org/)
 [![Kaggle Competition](https://img.shields.io/badge/Kaggle-RSNA%20Knee%20Abnormality-20BEFF.svg)](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection)
-[![Test Suite](https://img.shields.io/badge/tests-39%20passed-brightgreen.svg)]()
-[![Kaggle Public LB](https://img.shields.io/badge/Kaggle%20Public%20LB-0.917-blue.svg)]()
+[![Kaggle Public Score](https://img.shields.io/badge/Kaggle%20LB-0.917-success.svg)](https://www.kaggle.com/competitions/rsna-knee-abnormality-detection)
+[![Test Suite](https://img.shields.io/badge/tests-40%20passed-brightgreen.svg)]()
 
 A competitive, reproducible, and modular machine learning solution for the **RSNA Knee Abnormality Detection** challenge on Kaggle.
+
+📄 **Full Solution Summary**: [**`RSNA_Knee_Solution_Summary.md`**](https://github.com/Jethro-Chu/RSNA-Knee-project/blob/main/RSNA_Knee_Solution_Summary.md)
 
 ---
 
